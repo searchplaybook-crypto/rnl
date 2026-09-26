@@ -1,1 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&L Books (Pty) Ltd | Academic Textbooks, Legal Library Updating & Digital Supply</title>
+    <meta name="description" content="Official platform for R&L Books (Pty) Ltd - UKZN Howard College Campus Bookshop, Legal Loose-Leaf Library Updating & Annotations, Wildy & Sons Import, and Software Licensing.">
+    <meta name="keywords" content="R&L Books, RL Books, UKZN Howard College, Legal Loose Leaf Updating, SA Law Reports Annotations, Juta Law, SAFLII, UCT Law Library, B-BBEE Level 1, Durban legal library, KZN Bookshop">
+    <meta name="author" content="R&L Books (Pty) Ltd">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat (Headers), Crimson Text (Serif Text), Inter (UI Elements) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js CDN for Analytics & Ecosystem Animations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        title: ['Montserrat', 'sans-serif'],
+                        serif: ['Crimson Text', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        rl: {
+                            sepia: '#280000',
+                            thamar: '#181818',
+                            crimson: '#582028',
+                            thrill: '#902838',
+                            maroon: '#400808',
+                            merlot: '#702830',
+                            showstopper: '#A83038',
+                            gold: '#D97706',
+                            amber: '#F59E0B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Crimson Text', serif; font-size: 1.125rem; color: #1e293b; background-color: #f8fafc; }
+        h1, h2, h3, h4, h5, h6, .font-title { font-family: 'Montserrat', sans-serif; }
+        .font-sans-ui { font-family: 'Inter', sans-serif; }
+
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Hero Crimson Background Overlay */
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(40, 0, 0, 0.96) 0%, rgba(144, 40, 56, 0.92) 50%, rgba(24, 24, 24, 0.98) 100%),
+                        url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80') center/cover no-repeat;
+        }
+
+        /* Shimmer Effects */
+        @keyframes textShimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .rl-shimmer-text {
+            background: linear-gradient(90deg, #f59e0b, #fbbf24, #e8a0a0, #902838, #f59e0b);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShimmer 6s ease infinite;
+        }
+
+        .btn-shimmer-rl {
+            background: linear-gradient(90deg, #902838 0%, #a83038 40%, #d97706 50%, #a83038 60%, #902838 100%);
+            background-size: 200% 100%;
+            transition: all 0.4s ease;
+        }
+        .btn-shimmer-rl:hover {
+            background-position: 100% 0;
+            box-shadow: 0 10px 25px -5px rgba(144, 40, 56, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .btn-shimmer-gold {
+            background: linear-gradient(90deg, #d97706 0%, #f59e0b 40%, #fef08a 50%, #f59e0b 60%, #d97706 100%);
+            background-size: 200% 100%;
+            transition: all 0.4s ease;
+        }
+        .btn-shimmer-gold:hover {
+            background-position: 100% 0;
+            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.6);
+            transform: translateY(-1px);
+        }
+
+        /* Custom scrollbars */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Announcement & Contact Bar -->
+    <div class="bg-rl-sepia text-slate-300 text-xs font-sans-ui py-2 px-4 border-b border-rl-crimson">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span><i class="fa-solid fa-location-dot text-amber-500 mr-1.5"></i> UKZN Howard College Campus Bookshop (Durban, KZN)</span>
+                <span class="hidden sm:inline"><i class="fa-solid fa-phone text-amber-500 mr-1.5"></i> 031 260 1450</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-envelope text-amber-500 mr-1.5"></i> info@rlbooks.co.za</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="https://facebook.com/randlgroup.co.za" target="_blank" rel="noopener" class="text-amber-400 hover:text-amber-300 font-bold flex items-center transition-colors">
+                    <i class="fa-brands fa-facebook mr-1"></i> facebook.com/randlgroup.co.za
+                </a>
+                <span class="bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-bold border border-amber-500/30 uppercase text-[10px]">Level 1 B-BBEE (100% PDI)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 transition-all duration-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <img src="https://ik.imagekit.io/wemustcreate/rnl.png" alt="R&L Books Logo" class="h-11 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.src='https://placehold.co/120x45/902838/ffffff?text=R%26L+Books'">
+                    <div class="flex flex-col">
+                        <span class="font-title text-xl font-black text-rl-thrill tracking-tight leading-none">R&amp;L BOOKS</span>
+                        <span class="font-sans-ui text-[10px] font-bold tracking-wider text-slate-500 uppercase mt-0.5">(Pty) Ltd • Est. 2006</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-5 font-title text-xs font-bold text-slate-700 uppercase tracking-wider">
+                    <a href="#about" class="hover:text-rl-thrill transition-colors">About Us</a>
+                    <a href="#legal-framework" class="hover:text-rl-thrill transition-colors">Legal Services</a>
+                    <a href="#ecosystem-graph" class="hover:text-rl-thrill transition-colors">Ecosystem Graph</a>
+                    <a href="#leadership" class="hover:text-rl-thrill transition-colors">Leadership</a>
+                    <a href="#catalog" class="hover:text-rl-thrill transition-colors">Catalog &amp; Archives</a>
+                    <a href="#elearning" class="hover:text-rl-thrill transition-colors">E-Learning</a>
+                    <a href="#estimator" class="hover:text-rl-thrill transition-colors">Quote Estimator</a>
+                    <a href="#locations" class="hover:text-rl-thrill transition-colors">KZN Store</a>
+                    <a href="#faqs" class="hover:text-rl-thrill transition-colors">FAQs</a>
+                </nav>
+
+                <!-- Action Buttons -->
+                <div class="flex items-center space-x-3 font-sans-ui">
+                    <button onclick="toggleCartDrawer()" class="relative bg-slate-100 hover:bg-slate-200 text-slate-800 p-2.5 sm:px-4 sm:py-2.5 rounded-xl text-xs font-bold transition-all flex items-center space-x-2 border border-slate-200">
+                        <i class="fa-solid fa-basket-shopping text-rl-thrill text-sm"></i>
+                        <span class="hidden sm:inline">Quote Basket</span>
+                        <span id="cartBadge" class="bg-amber-500 text-slate-950 text-[11px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    </button>
+
+                    <button onclick="toggleModal('quoteModal')" class="hidden sm:flex btn-shimmer-rl text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow-md transition-all items-center">
+                        <i class="fa-solid fa-file-invoice mr-2 text-amber-400"></i>Request Quote
+                    </button>
+
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden text-slate-600 hover:text-slate-900 p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-lg font-title text-sm">
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-rl-thrill font-semibold border-b border-slate-100">About Us &amp; Heritage</a>
+            <a href="#legal-framework" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-rl-thrill font-semibold border-b border-slate-100">Legal Updating Services</a>
+            <a href="#ecosystem-graph" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-rl-thrill font-semibold border-b border-slate-100">Legal Ecosystem &amp; Graph</a>
+            <a href="#leadership" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-rl-thrill font-semibold border-b border-slate-100">Leadership</a>
+            <a href="#catalog" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-rl-thrill font-semibold border-b border-slate-100">Catalog &amp; Integrated Archives</a>
+            <a href="#elearning" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-rl-thrill font-semibold border-b border-slate-100">E-Learning Portal</a>
+            <a href="#estimator" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-rl-thrill font-semibold border-b border-slate-100">Service Fee Estimator</a>
+            <a href="#locations" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-rl-thrill font-semibold border-b border-slate-100">KZN Store Location</a>
+            <a href="#faqs" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-rl-thrill font-semibold border-b border-slate-100">FAQs</a>
+            <button onclick="toggleModal('quoteModal'); toggleMobileMenu();" class="w-full mt-2 btn-shimmer-rl text-white py-3 rounded-xl font-bold text-xs">
+                Request Custom Quote
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide-over Quote Basket Drawer -->
+    <div id="cartDrawerOverlay" onclick="toggleCartDrawer()" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-96 bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col font-sans-ui">
+        <div class="bg-rl-sepia text-white p-5 flex justify-between items-center border-b border-rl-crimson">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-basket-shopping text-amber-400"></i>
+                <h3 class="font-title font-bold text-base">Your Quote Basket</h3>
+            </div>
+            <button onclick="toggleCartDrawer()" class="text-slate-300 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+        </div>
+        <div id="cartItemsContainer" class="flex-grow p-5 overflow-y-auto space-y-4">
+            <div class="text-center py-12 text-slate-400 font-serif">
+                <i class="fa-solid fa-folder-open text-4xl mb-3 text-slate-300"></i>
+                <p>Your quote basket is currently empty.</p>
+                <p class="text-xs text-slate-400 mt-1">Browse our catalog or legal services to add items.</p>
+            </div>
+        </div>
+        <div class="p-5 bg-slate-50 border-t border-slate-200 space-y-3">
+            <div class="flex justify-between text-xs font-bold text-slate-700">
+                <span>Total Items Selected:</span>
+                <span id="cartTotalItems">0</span>
+            </div>
+            <button onclick="submitBasketQuote()" class="w-full btn-shimmer-rl text-white font-extrabold py-3 rounded-xl text-xs uppercase tracking-wider shadow">
+                Submit Quote Basket Request
+            </button>
+        </div>
+    </div>
+
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <section class="hero-bg text-white py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 font-sans-ui text-xs font-bold text-amber-300">
+                            <i class="fa-solid fa-certificate text-amber-400"></i>
+                            <span>100% Black-Owned &amp; Operated (PDI Enterprise) • Est. 2006</span>
+                        </div>
+                        
+                        <h1 class="font-title text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                            Advancing the Rule of Law &amp; <span class="rl-shimmer-text">Academic Excellence</span>.
+                        </h1>
+                        
+                        <p class="font-serif text-slate-200 text-lg sm:text-xl max-w-2xl leading-relaxed">
+                            Official platform for <strong>R&amp;L Books</strong> — operating the campus bookshop at <strong>UKZN Howard College (Durban, KZN)</strong>, full <strong>Legal Loose-Leaf Library Updating &amp; Annotations</strong>, and <strong>Digital Software Licensing</strong> across South Africa.
+                        </p>
+                        
+                        <div class="pt-2 flex flex-col sm:flex-row gap-4 font-sans-ui">
+                            <a href="#legal-framework" class="btn-shimmer-gold text-slate-950 font-extrabold px-7 py-3.5 rounded-xl shadow-lg text-center text-xs tracking-wide uppercase transition-all flex items-center justify-center">
+                                <i class="fa-solid fa-scale-balanced mr-2"></i>Legal Library Services
+                            </a>
+                            <a href="#catalog" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-7 py-3.5 rounded-xl backdrop-blur-sm text-center text-xs tracking-wide uppercase transition-all flex items-center justify-center">
+                                <i class="fa-solid fa-book-bookmark mr-2 text-amber-400"></i>Explore Integrated Catalog
+                            </a>
+                        </div>
+
+                        <!-- Highlights -->
+                        <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center sm:text-left font-sans-ui">
+                            <div>
+                                <div class="font-title text-2xl font-black text-white">48+ Yrs</div>
+                                <div class="text-xs text-slate-300">Combined Law Library Expertise</div>
+                            </div>
+                            <div>
+                                <div class="font-title text-2xl font-black text-amber-400">UKZN</div>
+                                <div class="text-xs text-slate-300">Howard College Bookshop (Durban)</div>
+                            </div>
+                            <div>
+                                <div class="font-title text-2xl font-black text-white">Level 1</div>
+                                <div class="text-xs text-slate-300">B-BBEE Contributor</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Quote Form Card -->
+                    <div class="lg:col-span-5 font-sans-ui">
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl text-slate-900 border border-slate-100">
+                            <div class="flex items-center space-x-3 mb-6">
+                                <div class="w-10 h-10 rounded-xl bg-rl-thrill/10 flex items-center justify-center text-rl-thrill font-bold text-lg">
+                                    <i class="fa-solid fa-bolt text-amber-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-title font-bold text-base text-slate-900 leading-snug">Rapid Inquiry &amp; Sourcing Desk</h3>
+                                    <p class="text-xs text-slate-500 font-serif">Prescribed textbooks, loose-leaf updates, or software licenses</p>
+                                </div>
+                            </div>
+
+                            <form id="heroQuickForm" onsubmit="handleQuickSubmit(event)" class="space-y-4 text-xs">
+                                <div>
+                                    <label class="block font-bold text-slate-600 uppercase tracking-wider mb-1">Service Required</label>
+                                    <select required id="quickCategory" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 font-semibold focus:ring-2 focus:ring-rl-thrill focus:outline-none">
+                                        <option value="loose-leaf">Legal Loose-Leaf Library Updating &amp; Filing</option>
+                                        <option value="annotations">SA Law Reports Annotations &amp; Corrigenda</option>
+                                        <option value="library-setup">New Legal Library Setup &amp; Indexing</option>
+                                        <option value="academic">UKZN Prescribed Textbooks (Howard College)</option>
+                                        <option value="wildy">Wildy &amp; Sons Rare Import Sourcing</option>
+                                        <option value="digital">Software Supply &amp; License Management</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block font-bold text-slate-600 uppercase tracking-wider mb-1">Firm / Institution Name &amp; Item Detail</label>
+                                    <input type="text" id="quickTitle" required placeholder="e.g. Smith Attorneys - Loose-Leaf Audit" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 focus:ring-2 focus:ring-rl-thrill focus:outline-none">
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block font-bold text-slate-600 uppercase tracking-wider mb-1">Contact Person</label>
+                                        <input type="text" id="quickName" required placeholder="Full Name" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 focus:ring-2 focus:ring-rl-thrill focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block font-bold text-slate-600 uppercase tracking-wider mb-1">Phone / WhatsApp</label>
+                                        <input type="tel" id="quickPhone" required placeholder="031 260 1450" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 focus:ring-2 focus:ring-rl-thrill focus:outline-none">
+                                    </div>
+                                </div>
+                                <button type="submit" class="w-full btn-shimmer-rl text-white font-extrabold py-3.5 rounded-xl uppercase tracking-wider shadow transition-all flex items-center justify-center">
+                                    <i class="fa-solid fa-paper-plane mr-2 text-amber-400"></i>Submit Service Request
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us & Heritage Section -->
+        <section id="about" class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="font-sans-ui text-xs font-black uppercase text-amber-600 tracking-widest">Company Background &amp; Heritage</span>
+                    <h2 class="font-title text-3xl font-black text-slate-900 mt-1">Welcome to R&amp;L Books</h2>
+                    <p class="font-serif text-slate-600 text-lg mt-2">
+                        A proud division of the <strong>R &amp; L Group</strong> — a multidisciplinary South African enterprise holding key interests in Academic Publishing, Book Distribution, Legal Library Services, Digitization, Online Licenses, Computer Software, and Supply License Management.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Background Content -->
+                    <div class="lg:col-span-7 space-y-6 font-serif text-slate-700 leading-relaxed text-base">
+                        <div class="bg-slate-50 border-l-4 border-rl-thrill p-6 rounded-r-2xl shadow-sm">
+                            <h3 class="font-title text-xl font-bold text-slate-900 mb-2">Established in 2006 &amp; Headquartered at UKZN Howard College</h3>
+                            <p>
+                                Operating continuously since 2006, R&amp;L Books operates its primary campus bookshop flagship at <strong>UKZN Howard College (Mazisi Kunene Rd, Durban, KZN)</strong>, serving law firms, advocate chambers, academic faculties, and university students.
+                            </p>
+                        </div>
+
+                        <p>
+                            We understand that in the legal and academic arenas, access to accurate, timely, and organized information is paramount. <strong>"Justice delayed is justice denied."</strong> We know the legal landscape, we know the market, and we understand the exacting demands of legal professionals, judiciary members, university faculties, and students.
+                        </p>
+
+                        <p>
+                            With a vast pool of resources, information, and experienced law librarians, R&amp;L Books delivers integrated solutions — bridging traditional loose-leaf physical publishing updates with modern digital software supply, open-access legal indices, and e-learning platforms.
+                        </p>
+
+                        <!-- Mission Statement Highlight Box -->
+                        <div class="bg-rl-sepia text-white p-6 rounded-2xl border border-rl-crimson shadow-md font-sans-ui">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <i class="fa-solid fa-bullseye text-amber-400 text-2xl"></i>
+                                <h4 class="font-title font-extrabold text-lg text-amber-300">Our Mission Statement</h4>
+                            </div>
+                            <p class="font-serif text-slate-200 text-base leading-relaxed">
+                                "To empower South African legal professionals, academic institutions, law firms, and students with reliable, meticulously updated legal libraries, prescribed learning materials, and seamless digital licensing solutions — driven by uncompromising accuracy, service integrity, and genuine black empowerment."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Core Values Cards Grid -->
+                    <div class="lg:col-span-5 font-sans-ui space-y-4">
+                        <h3 class="font-title font-bold text-lg text-slate-900 mb-2">Our Core Values</h3>
+                        
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-rl-thrill text-white flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-scale-balanced text-amber-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-title font-bold text-slate-900 text-sm">Accuracy &amp; Legal Reliability</h4>
+                                <p class="text-xs text-slate-600 font-serif mt-1">Ensuring every loose-leaf insertion, law report annotation, and prescribed textbook list is verified and current.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-amber-600 text-white flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-hands-holding-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-title font-bold text-slate-900 text-sm">PDI Transformation &amp; Empowerment</h4>
+                                <p class="text-xs text-slate-600 font-serif mt-1">Wholly owned and operated by Historically Disadvantaged Individuals (PDI) with 100% black staff representation.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-slate-800 text-white flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-title font-bold text-slate-900 text-sm">Client-Centric Commitment</h4>
+                                <p class="text-xs text-slate-600 font-serif mt-1">Proactive monthly filing schedules, personalized stock press management, and fast dispute resolution.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-700 text-white flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-title font-bold text-slate-900 text-sm">Digital Innovation</h4>
+                                <p class="text-xs text-slate-600 font-serif mt-1">Simplifying institutional software supply and e-learning multi-user licensing across Southern Africa.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Leadership Section (Privacy-First Executive Profile) -->
+        <section id="leadership" class="py-16 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="font-sans-ui text-xs font-black uppercase text-amber-600 tracking-widest">Governance &amp; Direction</span>
+                    <h2 class="font-title text-3xl font-black text-slate-900 mt-1">Executive Leadership &amp; Management</h2>
+                    <p class="font-serif text-slate-600 text-lg mt-2">
+                        Guiding R&amp;L Books with institutional integrity, academic partnership, and over four decades of collective legal library operations.
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm font-sans-ui space-y-8">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center border-b border-slate-100 pb-8">
+                        <div>
+                            <span class="text-xs font-extrabold text-amber-600 uppercase tracking-widest">Executive Board</span>
+                            <h3 class="font-title font-bold text-2xl text-slate-900 mt-1">Directorship &amp; Governance</h3>
+                            <p class="font-serif text-slate-600 text-sm mt-3 leading-relaxed">
+                                Directed by <strong>Ms. Oriel Buntting</strong> and <strong>Mr. Roderick Buntting</strong>, the executive team maintains strategic oversight across institutional supply agreements, university relationships at UKZN Howard College, B-BBEE compliance, and publisher relations with Juta, LexisNexis, and Wildy &amp; Sons.
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3 font-serif text-xs text-slate-700">
+                            <div class="flex items-center space-x-3 text-slate-900 font-sans-ui font-bold text-sm mb-1">
+                                <i class="fa-solid fa-building-shield text-rl-thrill"></i>
+                                <span>Corporate Governance Highlights</span>
+                            </div>
+                            <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>100% PDI Black Ownership &amp; Directorship</span></div>
+                            <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>Level 1 B-BBEE Procurement Recognition</span></div>
+                            <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>Centralized Corporate Desk Desk Routing</span></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 text-xs font-serif text-slate-600">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 rounded-lg bg-rl-thrill/10 text-rl-thrill flex items-center justify-center shrink-0 font-bold font-sans-ui">
+                                <i class="fa-solid fa-gavel"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-sans-ui font-bold text-slate-900 text-sm">Law Library Field Operations</h4>
+                                <p class="mt-1">Senior qualified legal librarians holding over 48 years of combined field experience in law report annotations and loose-leaf filing.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-700 flex items-center justify-center shrink-0 font-bold font-sans-ui">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-sans-ui font-bold text-slate-900 text-sm">UKZN Campus Retail Division</h4>
+                                <p class="mt-1">Dedicated academic supply staff stationed directly at UKZN Howard College for student prescribed book fulfillment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 font-sans-ui">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-envelope text-amber-400 text-xl"></i>
+                            <div>
+                                <div class="font-bold text-sm">Executive &amp; General Inquiries</div>
+                                <div class="text-xs text-slate-400 font-serif">Route direct correspondence through our central operational desk</div>
+                            </div>
+                        </div>
+                        <a href="mailto:info@rlbooks.co.za" class="btn-shimmer-gold text-slate-950 font-black px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider shrink-0">
+                            Contact Central Desk
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Framework Section -->
+        <section id="legal-framework" class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="font-sans-ui text-xs font-black uppercase text-amber-600 tracking-widest">Specialized Field Services</span>
+                    <h2 class="font-title text-3xl font-extrabold text-slate-900 mt-1">Legal Library Management Framework</h2>
+                    <p class="font-serif text-slate-600 text-lg mt-2">
+                        Comprehensive loose-leaf updating, law report annotations, statute maintenance, and complete library setups across South Africa's major legal publishing houses.
+                    </p>
+                </div>
+
+                <!-- Service Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-sans-ui">
+                    
+                    <!-- Service 1: Loose-Leaf Updating -->
+                    <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-rl-thrill/10 text-rl-thrill flex items-center justify-center font-bold text-xl mb-5">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <h3 class="font-title font-bold text-slate-900 text-lg mb-2">Loose-Leaf Updating &amp; Filing</h3>
+                            <p class="font-serif text-slate-600 text-sm leading-relaxed mb-4">
+                                Our qualified legal librarians possess over 48 years of combined law library experience. Each librarian is trained to provide efficient filing of loose-leaf updates across all major legal publishing houses (Juta, LexisNexis, etc.).
+                            </p>
+                            <ul class="space-y-2 text-xs text-slate-700 font-serif border-t border-slate-200 pt-3">
+                                <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Withdrawal of outdated &amp; superseded issues</li>
+                                <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Insertion of missing service updates &amp; page checks</li>
+                                <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Scheduled monthly librarian site visits</li>
+                                <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Streamlined indexing for immediate research</li>
+                            </ul>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200">
+                            <button onclick="addToBasket('Loose-Leaf Updating Service', 'Monthly Subscription')" class="w-full bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-2.5 rounded-xl text-xs transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-plus mr-1.5 text-rl-thrill"></i>Add to Quote Basket
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Annotations -->
+                    <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold text-xl mb-5">
+                                <i class="fa-solid fa-pen-nib"></i>
+                            </div>
+                            <h3 class="font-title font-bold text-slate-900 text-lg mb-2">Law Report Annotations</h3>
+                            <p class="font-serif text-slate-600 text-sm leading-relaxed mb-4">
+                                Save invaluable research time with meticulous law report annotations. We annotate your South African Law Reports and provide relevant judicial decisions to date.
+                            </p>
+                            <div class="bg-amber-100/50 p-3 rounded-xl text-xs border border-amber-200 space-y-1 font-serif text-slate-800">
+                                <div class="font-bold text-amber-900 font-sans-ui text-[11px] uppercase">Annotation Timings:</div>
+                                <div>• <strong>South African Law Reports:</strong> Bi-monthly</div>
+                                <div>• <strong>Criminal Law Reports:</strong> Bi-monthly</div>
+                                <div>• <strong>Industrial Law Journals:</strong> Bi-monthly</div>
+                                <div>• <strong>Corrigenda:</strong> Monthly</div>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200">
+                            <button onclick="addToBasket('Law Report Annotations', 'Bi-Monthly Service')" class="w-full bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-2.5 rounded-xl text-xs transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-plus mr-1.5 text-rl-thrill"></i>Add to Quote Basket
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: New Legal Library Setup -->
+                    <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 text-white flex items-center justify-center font-bold text-xl mb-5">
+                                <i class="fa-solid fa-boxes-packing"></i>
+                            </div>
+                            <h3 class="font-title font-bold text-slate-900 text-lg mb-2">New Library Setup &amp; Backlog Clearance</h3>
+                            <p class="font-serif text-slate-600 text-sm leading-relaxed mb-4">
+                                Complete library organization for new advocate chambers or law firms. Clearing backlogs of accumulated service issues, sorting Government Gazettes numerically, and establishing firm-branded indexing.
+                            </p>
+                            <ul class="space-y-2 text-xs text-slate-700 font-serif border-t border-slate-200 pt-3">
+                                <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Index cards &amp; envelope systems in textbooks</li>
+                                <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Subject markings on spines and shelf areas</li>
+                                <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Books stamped with firm ownership name</li>
+                                <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Admin files &amp; bookkeeper invoice audits</li>
+                            </ul>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200">
+                            <button onclick="addToBasket('New Legal Library Setup', 'Once-off Project')" class="w-full bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-2.5 rounded-xl text-xs transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-plus mr-1.5 text-rl-thrill"></i>Add to Quote Basket
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Libraries Ecosystem Interactive Graph Section -->
+        <section id="ecosystem-graph" class="py-16 bg-rl-sepia text-white font-sans-ui">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-black uppercase text-amber-400 tracking-widest">Legal Knowledge Networks</span>
+                    <h2 class="font-title text-3xl font-extrabold text-white mt-1">Legal Research &amp; Citation Ecosystem</h2>
+                    <p class="font-serif text-slate-300 text-lg mt-2">
+                        How R&amp;L Books bridges free open-access repositories, major commercial publishers, university archives, and physical loose-leaf collections across South Africa.
+                    </p>
+                </div>
+
+                <!-- Animated Graph & Tooltip Suite Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Chart 1: Animated Legal Coverage Graph -->
+                    <div class="lg:col-span-7 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 space-y-4">
+                        <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-chart-radar text-amber-400"></i>
+                                <h3 class="font-title font-bold text-sm text-white">Repository Coverage &amp; Update Velocity Index</h3>
+                            </div>
+                            <span class="text-[10px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-mono">Live Interactive Canvas</span>
+                        </div>
+
+                        <!-- Canvas Container for Chart.js -->
+                        <div class="relative h-72 sm:h-80 w-full">
+                            <canvas id="ecosystemRadarChart"></canvas>
+                        </div>
+
+                        <p class="font-serif text-xs text-slate-300 text-center italic">
+                            * Hover over radar nodes to inspect real-time indexing velocity, citation density, and R&amp;L physical-to-digital annotation linkage.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Tooltip Node Desk -->
+                    <div class="lg:col-span-5 space-y-3">
+                        <h3 class="font-title font-bold text-base text-amber-300 uppercase tracking-wider mb-2">Integrated Resource Nodes</h3>
+
+                        <!-- Node 1: SAFLII -->
+                        <div onclick="highlightNode('saflii')" id="node-saflii" class="bg-white/10 hover:bg-white/20 p-4 rounded-xl border border-white/15 transition-all cursor-pointer group">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
+                                        <i class="fa-solid fa-scale-unbalanced"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-title font-bold text-sm text-white group-hover:text-amber-300 transition-colors">SAFLII (saflii.org)</h4>
+                                        <span class="text-[10px] font-mono text-emerald-400">Open Access • Primary Case Law</span>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-circle-info text-slate-400 group-hover:text-amber-400 text-xs"></i>
+                            </div>
+                            <p class="font-serif text-xs text-slate-300 mt-2">
+                                Southern African Legal Information Institute providing free public access to High Court, Supreme Court of Appeal &amp; Constitutional Court decisions.
+                            </p>
+                        </div>
+
+                        <!-- Node 2: Juta Law -->
+                        <div onclick="highlightNode('juta')" id="node-juta" class="bg-white/10 hover:bg-white/20 p-4 rounded-xl border border-white/15 transition-all cursor-pointer group">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-9 h-9 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">
+                                        <i class="fa-solid fa-book-bookmark"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-title font-bold text-sm text-white group-hover:text-amber-300 transition-colors">Juta Law Publishing</h4>
+                                        <span class="text-[10px] font-mono text-amber-400">Statutes &amp; SA Law Reports</span>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-circle-info text-slate-400 group-hover:text-amber-400 text-xs"></i>
+                            </div>
+                            <p class="font-serif text-xs text-slate-300 mt-2">
+                                Premier commercial legal publisher. R&amp;L Books provides official on-site loose-leaf filing, volume page audits, and SA Law Reports annotations for all Juta collections.
+                            </p>
+                        </div>
+
+                        <!-- Node 3: UCT Law Library -->
+                        <div onclick="highlightNode('uct')" id="node-uct" class="bg-white/10 hover:bg-white/20 p-4 rounded-xl border border-white/15 transition-all cursor-pointer group">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-9 h-9 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-sm">
+                                        <i class="fa-solid fa-building-columns"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-title font-bold text-sm text-white group-hover:text-amber-300 transition-colors">UCT Law Library Archives</h4>
+                                        <span class="text-[10px] font-mono text-blue-400">Academic &amp; Rare Collections</span>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-circle-info text-slate-400 group-hover:text-amber-400 text-xs"></i>
+                            </div>
+                            <p class="font-serif text-xs text-slate-300 mt-2">
+                                University of Cape Town Brand van Zyl Law Library framework for academic cataloging, indexing cards, and rare manuscript sourcing.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Product & Service Integrated Interactive Catalog -->
+        <section id="catalog" class="py-16 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                    <div>
+                        <span class="font-sans-ui text-xs font-black uppercase text-amber-600 tracking-widest">Integrated Knowledge Search</span>
+                        <h2 class="font-title text-3xl font-extrabold text-slate-900 mt-1">Catalog &amp; Resource Integration</h2>
+                        <p class="font-serif text-slate-600 text-sm mt-1">Direct integration connecting SAFLII, Juta Law, and UCT Law Library Archives with R&amp;L physical &amp; digital stock.</p>
+                    </div>
+
+                    <!-- Search and Filter Controls -->
+                    <div class="flex flex-wrap items-center gap-3 font-sans-ui text-xs">
+                        <input type="text" id="catalogSearch" oninput="filterCatalog()" placeholder="Search title, ISBN, SAFLII case, Juta act..." class="bg-white border border-slate-300 rounded-xl px-3.5 py-2 focus:ring-2 focus:ring-rl-thrill focus:outline-none">
+                        
+                        <div class="flex flex-wrap bg-white p-1 rounded-xl border border-slate-200 gap-1">
+                            <button onclick="setCategoryFilter('all')" id="btnCatAll" class="px-3 py-1.5 rounded-lg font-bold transition-colors bg-rl-thrill text-white">All Resources</button>
+                            <button onclick="setCategoryFilter('saflii')" id="btnCatSaflii" class="px-3 py-1.5 rounded-lg font-bold transition-colors text-slate-600 hover:text-slate-900">SAFLII Cases</button>
+                            <button onclick="setCategoryFilter('juta')" id="btnCatJuta" class="px-3 py-1.5 rounded-lg font-bold transition-colors text-slate-600 hover:text-slate-900">Juta Law</button>
+                            <button onclick="setCategoryFilter('uct')" id="btnCatUct" class="px-3 py-1.5 rounded-lg font-bold transition-colors text-slate-600 hover:text-slate-900">UCT Archives</button>
+                            <button onclick="setCategoryFilter('academic')" id="btnCatAcademic" class="px-3 py-1.5 rounded-lg font-bold transition-colors text-slate-600 hover:text-slate-900">UKZN Textbooks</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Catalog Grid -->
+                <div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 font-sans-ui">
+                    <!-- Items rendered dynamically by JS -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- E-Learning Section (Replaces Freebie Download) -->
+        <section id="elearning" class="py-16 bg-white border-b border-slate-200 font-sans-ui">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-black uppercase text-amber-600 tracking-widest">Digital Learning &amp; Training</span>
+                    <h2 class="font-title text-3xl font-black text-slate-900 mt-1">R&amp;L Academic E-Learning Section</h2>
+                    <p class="font-serif text-slate-600 text-lg mt-2">
+                        Interactive learning modules, law student syllabus support, and law librarian training tutorials.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Module 1 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-rl-thrill text-white flex items-center justify-center font-bold text-lg mb-4">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <span class="text-[10px] uppercase font-extrabold text-amber-600 bg-amber-100 px-2 py-0.5 rounded">UKZN LLB Syllabus Course</span>
+                            <h3 class="font-title font-bold text-slate-900 text-base mt-2 mb-2">2026 UKZN Howard College Prescribed Syllabus Walkthrough</h3>
+                            <p class="font-serif text-xs text-slate-600 leading-relaxed">
+                                Complete e-learning overview of prescribed reading materials for Law of Contract, Delict, and Criminal Law courses at UKZN Howard College.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
+                            <span class="text-[11px] font-bold text-slate-500"><i class="fa-solid fa-clock mr-1"></i>3 Modules</span>
+                            <button onclick="alert('Accessing UKZN E-Learning Module... Login required.')" class="btn-shimmer-rl text-white font-bold px-4 py-2 rounded-xl text-xs">
+                                Access Portal
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-lg mb-4">
+                                <i class="fa-solid fa-magnifying-glass font-bold"></i>
+                            </div>
+                            <span class="text-[10px] uppercase font-extrabold text-slate-900 bg-slate-200 px-2 py-0.5 rounded">Research Skills</span>
+                            <h3 class="font-title font-bold text-slate-900 text-base mt-2 mb-2">Cross-Referencing SAFLII &amp; Juta Statutes</h3>
+                            <p class="font-serif text-xs text-slate-600 leading-relaxed">
+                                Master judicial research by connecting open-access SAFLII Constitutional Court judgments with physical Juta loose-leaf updating pages.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
+                            <span class="text-[11px] font-bold text-slate-500"><i class="fa-solid fa-clock mr-1"></i>45 Mins</span>
+                            <button onclick="alert('Launching Video Tutorial Desk...')" class="btn-shimmer-gold text-slate-950 font-bold px-4 py-2 rounded-xl text-xs">
+                                Watch Tutorial
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-lg mb-4">
+                                <i class="fa-solid fa-book-journal-whills"></i>
+                            </div>
+                            <span class="text-[10px] uppercase font-extrabold text-blue-700 bg-blue-100 px-2 py-0.5 rounded">Librarian Certification</span>
+                            <h3 class="font-title font-bold text-slate-900 text-base mt-2 mb-2">Loose-Leaf Maintenance &amp; Filing Masterclass</h3>
+                            <p class="font-serif text-xs text-slate-600 leading-relaxed">
+                                Professional guide for candidate attorneys and law librarians on managing loose-leaf service issue updates and Government Gazette indexing.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
+                            <span class="text-[11px] font-bold text-slate-500"><i class="fa-solid fa-clock mr-1"></i>Certificate Module</span>
+                            <button onclick="alert('Opening Certification Portal...')" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-2 rounded-xl text-xs">
+                                Start Module
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Service Fee Estimator & Request Form -->
+        <section id="estimator" class="py-16 bg-rl-sepia text-white font-sans-ui">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-black uppercase text-amber-400 tracking-widest">Formal Cost Breakdown</span>
+                    <h2 class="font-title text-3xl font-extrabold text-white mt-1">Service Quote Estimator</h2>
+                    <p class="font-serif text-slate-300 text-lg mt-2">Generate a clean, transparent estimate for legal library updating, annotations, or academic bulk textbook supply.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-md p-6 sm:p-10 rounded-3xl border border-white/20 space-y-6">
+                    
+                    <form id="quoteEstimatorForm" onsubmit="handleEstimatorSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block font-bold text-amber-300 uppercase text-xs mb-2">1. Select Primary Service</label>
+                                <select id="estService" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs text-white focus:ring-2 focus:ring-amber-400 focus:outline-none font-semibold">
+                                    <option value="loose-leaf">Loose-Leaf Monthly Updating &amp; Filing</option>
+                                    <option value="annotations">SA Law Reports Annotations &amp; Corrigenda</option>
+                                    <option value="library-setup">New Legal Library Setup &amp; Backlog Clearance</option>
+                                    <option value="academic">UKZN Bulk Academic Prescribed Books</option>
+                                    <option value="software">Digital Multi-User eBook Licensing</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block font-bold text-amber-300 uppercase text-xs mb-2">2. Entity / Practice Type</label>
+                                <select id="estEntity" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs text-white focus:ring-2 focus:ring-amber-400 focus:outline-none font-semibold">
+                                    <option value="advocate">Advocate Chambers / Senior Counsel</option>
+                                    <option value="law-firm">Commercial Law Firm Practice</option>
+                                    <option value="university">University Faculty / Academic Institution</option>
+                                    <option value="student">Individual Student / Candidate Attorney</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block font-bold text-amber-300 uppercase text-xs mb-2">3. Volume / Binder Count</label>
+                                <input type="text" id="estVolume" required placeholder="e.g. 15 Loose-Leaf Sets / 50 Students" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs text-white focus:ring-2 focus:ring-amber-400 focus:outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block font-bold text-amber-300 uppercase text-xs mb-2">4. Desired Service Frequency</label>
+                                <select id="estFrequency" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs text-white focus:ring-2 focus:ring-amber-400 focus:outline-none font-semibold">
+                                    <option value="monthly">Monthly Recurring Librarian Visits</option>
+                                    <option value="bi-monthly">Bi-Monthly Law Report Annotations</option>
+                                    <option value="once-off">Once-off Project / Setup</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold text-amber-300 uppercase text-xs mb-2">5. Additional Requirements or Notes</label>
+                            <textarea id="estNotes" rows="3" placeholder="Specify any specific Juta loose-leaf titles, SAFLII citation needs, or UKZN course requirements..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs text-white focus:ring-2 focus:ring-amber-400 focus:outline-none font-serif"></textarea>
+                        </div>
+
+                        <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div class="text-xs text-slate-300 font-serif">
+                                <i class="fa-solid fa-shield-halved text-amber-400 mr-1.5"></i>Official formal PDF quotation will be sent to your inbox.
+                            </div>
+                            <button type="submit" class="btn-shimmer-gold text-slate-950 font-extrabold px-8 py-3.5 rounded-xl uppercase tracking-wider text-xs shadow w-full sm:w-auto">
+                                <i class="fa-solid fa-paper-plane mr-2"></i>Generate Official Quote
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="font-sans-ui text-xs font-black uppercase text-amber-600 tracking-widest">Client Proof &amp; Testimonials</span>
+                    <h2 class="font-title text-3xl font-black text-slate-900 mt-1">Trusted Across Advocate Chambers &amp; Universities</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 font-serif">
+                    
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="text-amber-500 text-xs mb-3 space-x-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm italic leading-relaxed mb-4">
+                                "R&amp;L Books has kept our advocate chambers' loose-leaf sets immaculate for years. Their librarians identify missing service issues before we even notice."
+                            </p>
+                        </div>
+                        <div class="font-sans-ui border-t border-slate-200 pt-3">
+                            <strong class="block font-title text-slate-900 text-xs font-bold">Adv. M. Khumalo SC</strong>
+                            <span class="text-[11px] text-slate-500">Durban Bar Member</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="text-amber-500 text-xs mb-3 space-x-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm italic leading-relaxed mb-4">
+                                "As a law student at UKZN Howard College, having R&amp;L Books on campus means I always get genuine, up-to-date prescribed books with zero delay."
+                            </p>
+                        </div>
+                        <div class="font-sans-ui border-t border-slate-200 pt-3">
+                            <strong class="block font-title text-slate-900 text-xs font-bold">S. Naidoo</strong>
+                            <span class="text-[11px] text-slate-500">LLB Student, UKZN Howard College</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="text-amber-500 text-xs mb-3 space-x-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm italic leading-relaxed mb-4">
+                                "The Wildy &amp; Sons import desk helped our firm source rare 19th-century English law report volumes within weeks. Exceptional professionalism."
+                            </p>
+                        </div>
+                        <div class="font-sans-ui border-t border-slate-200 pt-3">
+                            <strong class="block font-title text-slate-900 text-xs font-bold">Commercial Practice Partner</strong>
+                            <span class="text-[11px] text-slate-500">Legal Practice Group</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Academic Insights & Blog Cards Section -->
+        <section class="py-16 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="font-sans-ui text-xs font-black uppercase text-amber-600 tracking-widest">Industry Knowledge</span>
+                    <h2 class="font-title text-3xl font-black text-slate-900 mt-1">Legal Literature &amp; Academic News</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 font-sans-ui">
+                    
+                    <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
+                        <div class="p-6 flex-grow space-y-3">
+                            <span class="text-[10px] uppercase font-bold text-amber-600 bg-amber-100 px-2.5 py-0.5 rounded">Legal Practice</span>
+                            <h3 class="font-title font-bold text-slate-900 text-base leading-snug">
+                                SAFLII Open Access vs. Physical Loose-Leaf Filing in Practice
+                            </h3>
+                            <p class="font-serif text-slate-600 text-xs leading-relaxed">
+                                Understanding how advocate chambers balance free online judgments with annotated physical law report volumes for courtroom authority.
+                            </p>
+                        </div>
+                        <div class="px-6 py-3 bg-slate-50 border-t border-slate-100 text-[11px] font-bold text-rl-thrill">
+                            Published by R&amp;L Research • 4 min read
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
+                        <div class="p-6 flex-grow space-y-3">
+                            <span class="text-[10px] uppercase font-bold text-amber-600 bg-amber-100 px-2.5 py-0.5 rounded">Campus Supply</span>
+                            <h3 class="font-title font-bold text-slate-900 text-base leading-snug">
+                                2026 UKZN Howard College Prescribed Book Release Notice
+                            </h3>
+                            <p class="font-serif text-slate-600 text-xs leading-relaxed">
+                                Complete breakdown of new editions for Contract, Delict, Constitutional Law, and Financial Accounting courses.
+                            </p>
+                        </div>
+                        <div class="px-6 py-3 bg-slate-50 border-t border-slate-100 text-[11px] font-bold text-rl-thrill">
+                            Published by UKZN Bookshop Desk • 2 min read
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
+                        <div class="p-6 flex-grow space-y-3">
+                            <span class="text-[10px] uppercase font-bold text-amber-600 bg-amber-100 px-2.5 py-0.5 rounded">Rare Imports</span>
+                            <h3 class="font-title font-bold text-slate-900 text-base leading-snug">
+                                Navigating UK Common Law Sourcing via Lincoln's Inn Desk
+                            </h3>
+                            <p class="font-serif text-slate-600 text-xs leading-relaxed">
+                                How R&amp;L Books partners with Wildy &amp; Sons to deliver rare antiquarian legal literature directly to South Africa.
+                            </p>
+                        </div>
+                        <div class="px-6 py-3 bg-slate-50 border-t border-slate-100 text-[11px] font-bold text-rl-thrill">
+                            Published by Foreign Import Sourcing • 5 min read
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- KZN Store Location & Operating Hours Section -->
+        <section id="locations" class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="font-sans-ui text-xs font-black uppercase text-amber-600 tracking-widest">Visit Our Physical Branch</span>
+                    <h2 class="font-title text-3xl font-black text-slate-900 mt-1">KZN Campus Store Location &amp; Hours</h2>
+                </div>
+
+                <div class="max-w-3xl mx-auto bg-slate-50 p-8 sm:p-10 rounded-3xl border border-slate-200 font-sans-ui space-y-6 shadow-sm">
+                    <div class="flex items-center space-x-4 border-b border-slate-200 pb-4">
+                        <div class="w-14 h-14 rounded-2xl bg-rl-thrill text-white flex items-center justify-center text-2xl font-bold shrink-0">
+                            <i class="fa-solid fa-building-columns text-amber-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-title font-bold text-xl text-slate-900">UKZN Howard College Branch (Durban, KZN)</h3>
+                            <p class="text-xs text-slate-500 font-serif">Official Campus Bookshop Flagship Store</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs font-serif text-slate-700">
+                        <div class="space-y-3">
+                            <div>
+                                <strong class="font-sans-ui font-bold text-slate-900 block mb-0.5">Physical Campus Address:</strong>
+                                <span>Mazisi Kunene Rd, Howard College Campus, Durban, 4001, KwaZulu-Natal</span>
+                            </div>
+                            <div>
+                                <strong class="font-sans-ui font-bold text-slate-900 block mb-0.5">Telephone Desk:</strong>
+                                <span>031 260 1450</span>
+                            </div>
+                            <div>
+                                <strong class="font-sans-ui font-bold text-slate-900 block mb-0.5">WhatsApp Desk:</strong>
+                                <span>076 186 4259</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 bg-white p-4 rounded-2xl border border-slate-200">
+                            <strong class="font-sans-ui font-bold text-slate-900 block mb-1">Operating Hours:</strong>
+                            <div class="flex justify-between py-1 border-b border-slate-100">
+                                <span>Monday - Friday:</span>
+                                <span class="font-bold text-slate-900">08:00 - 16:00</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-slate-100">
+                                <span>Saturday:</span>
+                                <span class="font-bold text-slate-900">08:30 - 12:30</span>
+                            </div>
+                            <div class="flex justify-between py-1 text-slate-400">
+                                <span>Sundays &amp; Public Holidays:</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row gap-4 items-center justify-between font-sans-ui">
+                        <a href="https://maps.google.com/?q=UKZN+Howard+College+Durban" target="_blank" class="btn-shimmer-rl text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center w-full sm:w-auto">
+                            <i class="fa-solid fa-diamond-turn-right mr-2 text-amber-400"></i>Get Directions on Google Maps
+                        </a>
+                        <a href="https://wa.me/27761864259" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center w-full sm:w-auto">
+                            <i class="fa-brands fa-whatsapp mr-2 text-white"></i>WhatsApp KZN Desk
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Social Stack Section -->
+        <section id="social-stack" class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="font-sans-ui text-xs font-black uppercase text-amber-600 tracking-widest">Connect &amp; Follow Us</span>
+                    <h2 class="font-title text-3xl font-black text-slate-900 mt-1">R&amp;L Group Social Stack</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Facebook Main Card -->
+                    <div class="lg:col-span-7 bg-blue-900 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden flex flex-col justify-between min-h-[280px]">
+                        <div class="relative z-10 space-y-4">
+                            <div class="inline-flex items-center space-x-2 bg-white/10 px-3.5 py-1 rounded-full text-xs font-bold text-blue-200">
+                                <i class="fa-brands fa-facebook-f text-blue-400"></i>
+                                <span>Official Facebook Community Page</span>
+                            </div>
+
+                            <h3 class="font-title text-2xl sm:text-3xl font-black text-white">
+                                facebook.com/randlgroup.co.za
+                            </h3>
+
+                            <p class="font-serif text-blue-100 text-sm max-w-xl">
+                                Join UKZN Howard College law &amp; commerce students, legal practitioners, and university staff for stock updates, textbook price lists, and loose-leaf filing notifications.
+                            </p>
+                        </div>
+
+                        <div class="relative z-10 pt-6 flex flex-wrap gap-4 font-sans-ui">
+                            <a href="https://facebook.com/randlgroup.co.za" target="_blank" rel="noopener" class="bg-white hover:bg-blue-50 text-blue-950 font-black px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-all flex items-center shadow">
+                                <i class="fa-brands fa-facebook mr-2 text-blue-600 text-lg"></i>Visit Facebook Page
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Additional Social Handles -->
+                    <div class="lg:col-span-5 space-y-4 font-sans-ui">
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-lg font-bold">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-title font-bold text-slate-900 text-sm">UKZN KZN Store WhatsApp</h4>
+                                    <p class="text-xs text-slate-500 font-serif">076 186 4259</p>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/27761864259" target="_blank" class="text-xs font-bold text-emerald-600 hover:underline">Chat Desk <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center text-lg font-bold">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-title font-bold text-slate-900 text-sm">Direct Email Support Desk</h4>
+                                    <p class="text-xs text-slate-500 font-serif">info@rlbooks.co.za</p>
+                                </div>
+                            </div>
+                            <a href="mailto:info@rlbooks.co.za" class="text-xs font-bold text-slate-900 hover:underline">Send Email <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section id="faqs" class="py-16 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="font-sans-ui text-xs font-black uppercase text-amber-600 tracking-widest">Clear Answers</span>
+                    <h2 class="font-title text-3xl font-extrabold text-slate-900 mt-1">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="space-y-4 font-sans-ui text-xs" id="faqAccordion">
+                    
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq('faq1')" class="w-full text-left p-5 flex justify-between items-center font-title font-bold text-sm text-slate-900 hover:text-rl-thrill transition-colors">
+                            <span>How does the Legal Loose-Leaf Updating service work for law firms and advocate chambers?</span>
+                            <i id="faq1Icon" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                        </button>
+                        <div id="faq1" class="hidden p-5 pt-0 border-t border-slate-100 font-serif text-slate-600 text-sm leading-relaxed">
+                            Our qualified legal librarians visit your firm or chambers monthly. We audit your loose-leaf volumes (Juta, LexisNexis, etc.), remove outdated issue pages, insert missing updates, stamp and index new volumes, and provide an updated admin control sheet.
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq('faq2')" class="w-full text-left p-5 flex justify-between items-center font-title font-bold text-sm text-slate-900 hover:text-rl-thrill transition-colors">
+                            <span>Where is the physical R&amp;L Books campus store located?</span>
+                            <i id="faq2Icon" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                        </button>
+                        <div id="faq2" class="hidden p-5 pt-0 border-t border-slate-100 font-serif text-slate-600 text-sm leading-relaxed">
+                            Our physical campus store is located at <strong>UKZN Howard College Campus (Mazisi Kunene Road, Durban, KZN)</strong>. Store Tel: 031 260 1450 | WhatsApp: 076 186 4259.
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq('faq3')" class="w-full text-left p-5 flex justify-between items-center font-title font-bold text-sm text-slate-900 hover:text-rl-thrill transition-colors">
+                            <span>How are SAFLII open-access cases integrated into physical legal collections?</span>
+                            <i id="faq3Icon" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                        </button>
+                        <div id="faq3" class="hidden p-5 pt-0 border-t border-slate-100 font-serif text-slate-600 text-sm leading-relaxed">
+                            Our librarians cross-reference SAFLII citations directly within your physical law report annotations and loose-leaf sets, ensuring practitioners have digital link references directly alongside hardcopy statutes and precedents.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-rl-thamar text-slate-400 py-12 px-4 sm:px-6 lg:px-8 border-t border-rl-sepia font-sans-ui text-xs">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-3">
+                <div class="flex items-center space-x-2 text-white font-title font-bold text-base">
+                    <span>R&amp;L BOOKS (Pty) Ltd</span>
+                </div>
+                <p class="font-serif text-slate-400">
+                    Official Campus Bookshop for UKZN Howard College &amp; Legal Library Updating Specialists. Est. 2006.
+                </p>
+                <div class="text-[11px] text-amber-400 font-bold">
+                    Level 1 B-BBEE Contributor (100% PDI)
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-title font-bold text-white uppercase tracking-wider mb-3">Quick Navigation</h4>
+                <ul class="space-y-2 font-serif">
+                    <li><a href="#about" class="hover:text-amber-400 transition-colors">About R&amp;L Books</a></li>
+                    <li><a href="#legal-framework" class="hover:text-amber-400 transition-colors">Legal Library Updating</a></li>
+                    <li><a href="#catalog" class="hover:text-amber-400 transition-colors">Catalog &amp; Archives</a></li>
+                    <li><a href="#elearning" class="hover:text-amber-400 transition-colors">E-Learning Portal</a></li>
+                    <li><a href="#locations" class="hover:text-amber-400 transition-colors">UKZN KZN Store</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-title font-bold text-white uppercase tracking-wider mb-3">Resource Nodes</h4>
+                <ul class="space-y-2 font-serif">
+                    <li><a href="https://saflii.org" target="_blank" class="hover:text-amber-400 transition-colors">SAFLII Open Access</a></li>
+                    <li><a href="#catalog" class="hover:text-amber-400 transition-colors">Juta Law Publications</a></li>
+                    <li><a href="#catalog" class="hover:text-amber-400 transition-colors">UCT Law Library Archives</a></li>
+                    <li><a href="#catalog" class="hover:text-amber-400 transition-colors">Wildy &amp; Sons UK Sourcing</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="font-title font-bold text-white uppercase tracking-wider mb-3">KZN Campus Desk</h4>
+                <div class="font-serif space-y-1">
+                    <div>UKZN Howard College Campus</div>
+                    <div>Mazisi Kunene Rd, Durban, 4001</div>
+                    <div>Phone: 031 260 1450</div>
+                    <div>Email: info@rlbooks.co.za</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-6 border-t border-slate-800 text-center font-serif text-slate-500 text-[11px]">
+            &copy; 2026 R&amp;L Books (Pty) Ltd. All rights reserved. | 100% Black-Owned Enterprise.
+        </div>
+    </footer>
+
+    <!-- Universal Quote Modal -->
+    <div id="quoteModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 font-sans-ui">
+        <div class="bg-white text-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative">
+            <button onclick="toggleModal('quoteModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <div class="mb-6">
+                <h3 class="font-title font-black text-xl text-slate-900">Request Custom Quote</h3>
+                <p class="text-xs text-slate-500 font-serif">Official proposal sent to your email within 2 hours</p>
+            </div>
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-bold text-slate-600 uppercase mb-1">Full Name</label>
+                    <input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-rl-thrill">
+                </div>
+                <div>
+                    <label class="block font-bold text-slate-600 uppercase mb-1">Email Address</label>
+                    <input type="email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-rl-thrill">
+                </div>
+                <div>
+                    <label class="block font-bold text-slate-600 uppercase mb-1">Service Required</label>
+                    <select class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-rl-thrill font-semibold">
+                        <option>Legal Loose-Leaf Library Updating</option>
+                        <option>SA Law Reports Annotations</option>
+                        <option>UKZN Prescribed Textbooks</option>
+                        <option>Juta / SAFLII Archive Integration</option>
+                        <option>Wildy &amp; Sons Import Desk</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full btn-shimmer-rl text-white font-extrabold py-3.5 rounded-xl uppercase tracking-wider text-xs shadow">
+                    Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Data Logic & Interactivity -->
+    <script>
+        // Catalog Array with Integrated SAFLII, Juta Law, UCT Archives, and UKZN Books
+        const catalogItems = [
+            {
+                id: 'cat-1',
+                title: 'Constitutional Court Judgments Index (2020-2026)',
+                category: 'saflii',
+                type: 'SAFLII Open Access Repository',
+                badge: 'Open Access',
+                badgeBg: 'bg-emerald-100 text-emerald-800',
+                desc: 'Integrated digital indexing for Constitutional Court judgments with cross-referenced physical law report volume volume notes.',
+                actionText: 'View SAFLII Entry'
+            },
+            {
+                id: 'cat-2',
+                title: 'Juta SA Criminal Law Reports (Complete Sets)',
+                category: 'juta',
+                type: 'Juta Law Loose-Leaf & Reports',
+                badge: 'Juta Official',
+                badgeBg: 'bg-amber-100 text-amber-900',
+                desc: 'Official Juta Criminal Law Reports with bi-monthly loose-leaf filing support and annotation slips.',
+                actionText: 'Add to Quote Basket'
+            },
+            {
+                id: 'cat-3',
+                title: 'Brand van Zyl Rare Legal Manuscript Collection',
+                category: 'uct',
+                type: 'UCT Law Library Archives',
+                badge: 'UCT Archive',
+                badgeBg: 'bg-blue-100 text-blue-900',
+                desc: 'Historical Roman-Dutch law references sourced and cataloged via UCT Law Library archival classification standards.',
+                actionText: 'Request Archive Copy'
+            },
+            {
+                id: 'cat-4',
+                title: 'Law of Contract in South Africa (8th Edition)',
+                category: 'academic',
+                type: 'UKZN Prescribed Book (Howard College)',
+                badge: 'Prescribed 2026',
+                badgeBg: 'bg-rose-100 text-rose-900',
+                desc: 'Official prescribed textbook for UKZN Howard College LLB contract modules. In stock at campus bookshop.',
+                actionText: 'Add to Quote Basket'
+            },
+            {
+                id: 'cat-5',
+                title: 'Supreme Court of Appeal Precedents Index',
+                category: 'saflii',
+                type: 'SAFLII Open Access Repository',
+                badge: 'Open Access',
+                badgeBg: 'bg-emerald-100 text-emerald-800',
+                desc: 'Direct digital link notes bridging SAFLII SCA appellate judgments with physical law library loose-leaf binders.',
+                actionText: 'View SAFLII Entry'
+            },
+            {
+                id: 'cat-6',
+                title: 'Juta Statutes of South Africa (Unannotated / Annotated)',
+                category: 'juta',
+                type: 'Juta Law Loose-Leaf & Reports',
+                badge: 'Juta Official',
+                badgeBg: 'bg-amber-100 text-amber-900',
+                desc: 'Multi-volume statutory sets complete with quarterly Noter-Up amendment slips and monthly librarian filing.',
+                actionText: 'Add to Quote Basket'
+            }
+        ];
+
+        let quoteBasket = [];
+        let currentFilter = 'all';
+
+        // Render Catalog Grid
+        function renderCatalog() {
+            const grid = document.getElementById('catalogGrid');
+            const searchVal = document.getElementById('catalogSearch').value.toLowerCase();
+
+            const filtered = catalogItems.filter(item => {
+                const matchesFilter = (currentFilter === 'all') || (item.category === currentFilter);
+                const matchesSearch = item.title.toLowerCase().includes(searchVal) || 
+                                      item.type.toLowerCase().includes(searchVal) || 
+                                      item.desc.toLowerCase().includes(searchVal);
+                return matchesFilter && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-slate-500 font-serif">
+                        <i class="fa-solid fa-magnifying-glass text-3xl text-slate-300 mb-2"></i>
+                        <p>No catalog items or repository entries found matching your search.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(item => `
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded ${item.badgeBg}">
+                                ${item.badge}
+                            </span>
+                            <span class="text-[11px] font-mono text-slate-400">${item.type}</span>
+                        </div>
+                        <h3 class="font-title font-bold text-slate-900 text-base mb-2">${item.title}</h3>
+                        <p class="font-serif text-slate-600 text-xs leading-relaxed mb-4">${item.desc}</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100">
+                        <button onclick="addToBasket('${item.title}', '${item.type}')" class="w-full btn-shimmer-rl text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center">
+                            <i class="fa-solid fa-plus mr-1.5 text-amber-400"></i>${item.actionText}
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function setCategoryFilter(cat) {
+            currentFilter = cat;
+            ['btnCatAll', 'btnCatSaflii', 'btnCatJuta', 'btnCatUct', 'btnCatAcademic'].forEach(id => {
+                const btn = document.getElementById(id);
+                if (btn) {
+                    btn.className = "px-3 py-1.5 rounded-lg font-bold transition-colors text-slate-600 hover:text-slate-900";
+                }
+            });
+
+            const activeBtn = document.getElementById('btnCat' + cat.charAt(0).toUpperCase() + cat.slice(1));
+            if (activeBtn) {
+                activeBtn.className = "px-3 py-1.5 rounded-lg font-bold transition-colors bg-rl-thrill text-white";
+            }
+            renderCatalog();
+        }
+
+        function filterCatalog() {
+            renderCatalog();
+        }
+
+        // Cart Basket Logic
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cartDrawer');
+            const overlay = document.getElementById('cartDrawerOverlay');
+            drawer.classList.toggle('translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        function addToBasket(title, type) {
+            quoteBasket.push({ title, type });
+            updateBasketUI();
+            toggleCartDrawer();
+        }
+
+        function removeFromBasket(index) {
+            quoteBasket.splice(index, 1);
+            updateBasketUI();
+        }
+
+        function updateBasketUI() {
+            document.getElementById('cartBadge').innerText = quoteBasket.length;
+            document.getElementById('cartTotalItems').innerText = quoteBasket.length;
+            const container = document.getElementById('cartItemsContainer');
+
+            if (quoteBasket.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-slate-400 font-serif">
+                        <i class="fa-solid fa-folder-open text-4xl mb-3 text-slate-300"></i>
+                        <p>Your quote basket is currently empty.</p>
+                        <p class="text-xs text-slate-400 mt-1">Browse our catalog or legal services to add items.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = quoteBasket.map((item, idx) => `
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 flex items-center justify-between">
+                    <div>
+                        <strong class="block text-xs font-title text-slate-900 font-bold">${item.title}</strong>
+                        <span class="text-[10px] text-slate-500 font-serif">${item.type}</span>
+                    </div>
+                    <button onclick="removeFromBasket(${idx})" class="text-rose-600 hover:text-rose-800 p-1">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function submitBasketQuote() {
+            if (quoteBasket.length === 0) {
+                alert('Your quote basket is empty. Please add items before submitting.');
+                return;
+            }
+            alert('Quote Basket submitted successfully! Our KZN desk will email your formal proposal within 2 hours.');
+            quoteBasket = [];
+            updateBasketUI();
+            toggleCartDrawer();
+        }
+
+        // Mobile Menu & Modals
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function toggleModal(id) {
+            document.getElementById(id).classList.toggle('hidden');
+        }
+
+        function toggleFaq(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById(id + 'Icon');
+            el.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Form Handlers
+        function handleQuickSubmit(e) {
+            e.preventDefault();
+            alert('Service request received! A representative from our UKZN Howard College desk will contact you shortly.');
+            e.target.reset();
+        }
+
+        function handleEstimatorSubmit(e) {
+            e.preventDefault();
+            alert('Service estimate request received! Your formal PDF quotation is being generated and emailed.');
+            e.target.reset();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! Your quote inquiry has been routed to our corporate team.');
+            toggleModal('quoteModal');
+        }
+
+        // Node Highlight in Radar Graph
+        function highlightNode(nodeKey) {
+            alert('Highlighting ' + nodeKey.toUpperCase() + ' node linkage in the R&L Legal Ecosystem Radar graph.');
+        }
+
+        // Initialize Ecosystem Radar Chart
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCatalog();
+
+            const ctx = document.getElementById('ecosystemRadarChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'radar',
+                    data: {
+                        labels: [
+                            'SAFLII Open Access',
+                            'Juta Loose-Leaf Filing',
+                            'UCT Library Archives',
+                            'UKZN Textbooks',
+                            'Wildy UK Sourcing',
+                            'Digital Software'
+                        ],
+                        datasets: [{
+                            label: 'R&L Integration Index',
+                            data: [95, 98, 90, 99, 88, 92],
+                            backgroundColor: 'rgba(245, 158, 11, 0.25)',
+                            borderColor: '#f59e0b',
+                            pointBackgroundColor: '#902838',
+                            pointBorderColor: '#ffffff',
+                            pointHoverBackgroundColor: '#ffffff',
+                            pointHoverBorderColor: '#f59e0b'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            r: {
+                                angleLines: { color: 'rgba(255, 255, 255, 0.15)' },
+                                grid: { color: 'rgba(255, 255, 255, 0.15)' },
+                                pointLabels: { color: '#f8fafc', font: { size: 10, family: 'Montserrat' } },
+                                ticks: { display: false, backdropColor: 'transparent' }
+                            }
+                        },
+                        plugins: {
+                            legend: { display: false }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
