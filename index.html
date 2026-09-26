@@ -8,10 +8,7 @@
   <meta name="theme-color" content="#22080b">
   <title>R&L Books | Rule of Law & Academic Excellence</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,600,700&f[]=switzer@400,500,600,700,800&display=swap">
 
   <style>
     :root{
@@ -38,7 +35,7 @@
       margin:0;
       color:var(--ink);
       background:var(--paper);
-      font-family:"Crimson Text",Georgia,serif;
+      font-family:"Zodiak",Georgia,serif;
       font-size:18px;
       line-height:1.65;
     }
@@ -62,11 +59,12 @@
     .section-head.center{text-align:center;margin-inline:auto}
     .section-head h2{
       margin:12px 0 14px;
-      font:800 clamp(32px,4vw,50px)/1.08 "Montserrat",sans-serif;
+      font:800 clamp(32px,4vw,50px)/1.08 "Switzer",Arial,sans-serif;
       letter-spacing:-.035em;
       color:var(--maroon);
     }
     .section-head p{margin:0;color:#5f646b;font-size:20px}
+    .icon-mark{font-family:"Switzer",Arial,sans-serif;font-weight:800;display:inline-block;min-width:1em;text-align:center}
     .btn{
       border:0;
       border-radius:12px;
@@ -87,29 +85,38 @@
     .btn-dark{background:var(--maroon);color:#fff}
     .btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.32)}
     .btn-light{background:#fff;color:var(--maroon);border:1px solid var(--line)}
-
     /* Header */
+
+    .site-header{
+      position:absolute;top:0;left:0;right:0;z-index:100;
+      background:rgba(10,5,7,.16);
+      backdrop-filter:blur(14px) saturate(125%);
+      -webkit-backdrop-filter:blur(14px) saturate(125%);
+      border-bottom:1px solid rgba(255,255,255,.14);
+      transition:background .3s ease,box-shadow .3s ease,border-color .3s ease;
+    }
+    .site-header.scrolled{
+      position:fixed;
+      background:rgba(18,7,9,.68);
+      border-bottom-color:rgba(216,154,33,.22);
+      box-shadow:0 12px 40px rgba(0,0,0,.18);
+    }
+
     .utility{
-      background:#120709;
-      color:#d9d0d0;
+      background:rgba(8,4,5,.62);
+      color:#e6dddd;
       border-bottom:1px solid rgba(255,255,255,.08);
     }
     .utility-inner{
-      min-height:38px;
+      min-height:34px;
       display:flex;
       align-items:center;
-      justify-content:space-between;
+      justify-content:flex-end;
       gap:18px;
-      font:600 11px "Inter",sans-serif;
+      font:600 10px "Switzer",sans-serif;
     }
     .utility span{display:inline-flex;align-items:center;gap:7px}
     .utility i{color:var(--gold)}
-    .site-header{
-      position:sticky;top:0;z-index:100;
-      background:rgba(255,255,255,.95);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(20,20,20,.08);
-    }
     .nav{
       height:78px;
       display:flex;
@@ -126,15 +133,15 @@
     }
     .brand img{width:72px;height:48px;object-fit:contain}
     .brand-name{
-      font:900 19px/1 "Montserrat",sans-serif;
-      color:var(--crimson);
-      letter-spacing:-.02em;
+      font:800 20px/1 "Switzer",sans-serif;
+      color:#fff;
+      letter-spacing:-.025em;
     }
     .brand-sub{
       display:block;
       margin-top:5px;
-      color:#777;
-      font:700 9px/1 "Inter",sans-serif;
+      color:#e4c77d;
+      font:700 9px/1 "Switzer",sans-serif;
       letter-spacing:.13em;
       text-transform:uppercase;
     }
@@ -142,31 +149,34 @@
       display:flex;
       align-items:center;
       gap:22px;
-      font:700 11px "Inter",sans-serif;
+      font:700 10px "Switzer",sans-serif;
       text-transform:uppercase;
       letter-spacing:.07em;
     }
-    .desktop-nav a{text-decoration:none;color:#34373b}
-    .desktop-nav a:hover{color:var(--crimson)}
+    .desktop-nav a{text-decoration:none;color:#fff}
+    .desktop-nav a:hover{color:var(--gold)}
     .nav-actions{display:flex;align-items:center;gap:10px}
     .menu-btn{
-      width:44px;height:44px;border:1px solid var(--line);
-      border-radius:12px;background:#fff;color:var(--maroon);cursor:pointer;
+      width:44px;height:44px;border:1px solid rgba(255,255,255,.28);
+      border-radius:12px;background:rgba(255,255,255,.08);color:#fff;cursor:pointer;
       display:none;
     }
     .mobile-panel{
       display:none;
-      border-top:1px solid var(--line);
-      background:#fff;
+      border-top:1px solid rgba(255,255,255,.12);
+      background:rgba(18,7,9,.92);
+      backdrop-filter:blur(18px);
       padding:10px 18px 18px;
     }
     .mobile-panel.open{display:block}
     .mobile-panel a{
       display:block;padding:13px 0;
-      border-bottom:1px solid #eee;
-      font:700 12px "Inter",sans-serif;
+      border-bottom:1px solid rgba(255,255,255,.1);
+      font:700 12px "Switzer",sans-serif;
       text-decoration:none;text-transform:uppercase;letter-spacing:.05em;
+      color:#fff;
     }
+
 
     /* Hero */
     .hero{
@@ -198,7 +208,7 @@
     .hero-copy{max-width:920px;margin:auto}
     .hero h1{
       margin:20px 0;
-      font:900 clamp(43px,7vw,78px)/1.02 "Montserrat",sans-serif;
+      font:900 clamp(43px,7vw,78px)/1.02 "Switzer",Arial,sans-serif;
       letter-spacing:-.055em;
     }
     .hero h1 span{color:var(--gold)}
@@ -233,7 +243,7 @@
     }
     .heritage-card h3{
       margin:0 0 7px;
-      font:800 21px/1.25 "Montserrat",sans-serif;color:var(--maroon);
+      font:800 21px/1.25 "Switzer",Arial,sans-serif;color:var(--maroon);
     }
     .about-copy p{margin:0 0 20px}
     .about-side{
@@ -241,7 +251,7 @@
       box-shadow:var(--shadow);
     }
     .about-side h3{
-      margin:0 0 20px;font:800 22px "Montserrat",sans-serif;color:#fff;
+      margin:0 0 20px;font:800 22px "Switzer",Arial,sans-serif;color:#fff;
     }
     .value{
       display:grid;grid-template-columns:44px 1fr;gap:13px;
@@ -273,7 +283,7 @@
       background:rgba(216,154,33,.1);color:var(--gold);font-size:21px;
       margin-bottom:24px;
     }
-    .service-card h3{margin:0 0 10px;font:800 20px "Montserrat",sans-serif}
+    .service-card h3{margin:0 0 10px;font:800 20px "Switzer",Arial,sans-serif}
     .service-card p{margin:0;color:#cfc5c6;font-size:17px}
     .service-card ul{margin:18px 0 0;padding-left:18px;color:#ddd;font-size:15px}
     .service-card li{margin:5px 0}
@@ -284,7 +294,7 @@
       padding:32px;background:#fff;border:1px solid var(--line);
       border-radius:var(--radius);box-shadow:var(--shadow);
     }
-    .legal-intro h3{margin:0 0 12px;font:800 25px "Montserrat",sans-serif;color:var(--maroon)}
+    .legal-intro h3{margin:0 0 12px;font:800 25px "Switzer",Arial,sans-serif;color:var(--maroon)}
     .legal-intro p{margin:0 0 18px}
     .check-list{list-style:none;margin:0;padding:0}
     .check-list li{
@@ -312,7 +322,7 @@
       content:"";position:absolute;width:230px;height:230px;border:1px solid rgba(216,154,33,.3);
       border-radius:50%;right:-90px;top:-90px;
     }
-    .future-box h3{margin:0 0 13px;font:800 29px/1.15 "Montserrat",sans-serif}
+    .future-box h3{margin:0 0 13px;font:800 29px/1.15 "Switzer",Arial,sans-serif}
     .future-box p{margin:0;color:#ded2d3}
     .future-list{display:grid;gap:12px;margin-top:24px}
     .future-list div{display:flex;gap:12px;align-items:flex-start}
@@ -326,7 +336,7 @@
       display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
       background:#fff;
     }
-    .publisher strong{font:800 20px "Montserrat",sans-serif;color:var(--maroon)}
+    .publisher strong{font:800 20px "Switzer",Arial,sans-serif;color:var(--maroon)}
     .publisher span{margin-top:7px;color:#6a6f75;font:600 11px "Inter",sans-serif;text-transform:uppercase;letter-spacing:.08em}
 
     /* Governance */
@@ -336,7 +346,7 @@
       box-shadow:0 10px 30px rgba(25,10,12,.05);
     }
     .person .role{font:800 10px "Inter",sans-serif;text-transform:uppercase;letter-spacing:.13em;color:var(--gold)}
-    .person h3{margin:8px 0 8px;font:800 24px "Montserrat",sans-serif;color:var(--maroon)}
+    .person h3{margin:8px 0 8px;font:800 24px "Switzer",Arial,sans-serif;color:var(--maroon)}
     .person p{margin:0;color:#666;font-size:16px}
 
     /* Contact */
@@ -358,7 +368,7 @@
       background:#fff;color:var(--ink);border-radius:24px;padding:30px;
       box-shadow:0 25px 60px rgba(0,0,0,.22);
     }
-    .contact-form h3{margin:0 0 18px;font:800 22px "Montserrat",sans-serif;color:var(--maroon)}
+    .contact-form h3{margin:0 0 18px;font:800 22px "Switzer",Arial,sans-serif;color:var(--maroon)}
     .field{margin-bottom:14px}
     .field label{display:block;margin-bottom:6px;font:800 10px "Inter",sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#5c6268}
     .field input,.field textarea,.field select{
@@ -385,6 +395,84 @@
       transform:translateY(30px);opacity:0;pointer-events:none;transition:.25s ease;
     }
     .toast.show{transform:translateY(0);opacity:1}
+
+
+    /* Colorion-inspired pure-CSS text motion: shimmer / shine, with reduced-motion support */
+    .shimmer{
+      background:linear-gradient(
+        110deg,
+        currentColor 0%,
+        currentColor 36%,
+        #fff4c8 47%,
+        #ffffff 50%,
+        #fff4c8 53%,
+        currentColor 64%,
+        currentColor 100%
+      );
+      background-size:220% 100%;
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      animation:textShimmer 4.8s linear infinite;
+    }
+    @keyframes textShimmer{
+      from{background-position:220% 0}
+      to{background-position:-220% 0}
+    }
+    .hero h1 .shimmer{color:var(--gold)}
+    .section-head h2 .shimmer{color:var(--maroon)}
+    .marquee-section{
+      margin:52px 0 0;
+      padding:30px 0 6px;
+      border-top:1px solid var(--line);
+      overflow:hidden;
+    }
+    .marquee-label{
+      text-align:center;
+      margin-bottom:22px;
+      font:800 10px "Switzer",sans-serif;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#777;
+    }
+    .logo-marquee{
+      position:relative;
+      width:100%;
+      overflow:hidden;
+      mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+      -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+    }
+    .logo-track{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      width:max-content;
+      animation:logoScroll 42s linear infinite;
+    }
+    .logo-track:hover{animation-play-state:paused}
+    .logo-item{
+      width:180px;height:92px;
+      flex:0 0 180px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:13px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:0 8px 24px rgba(25,10,12,.05);
+    }
+    .logo-item img{
+      width:100%;height:100%;object-fit:contain;
+    }
+    @keyframes logoScroll{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .shimmer,.logo-track{animation:none}
+      html{scroll-behavior:auto}
+    }
 
     @media (max-width: 980px){
       .desktop-nav,.nav-actions .btn{display:none}
@@ -417,9 +505,9 @@
 <body>
   <div class="utility">
     <div class="container utility-inner">
-      <span><i class="fa-solid fa-location-dot"></i> UKZN Howard College, Durban</span>
-      <span class="phone"><i class="fa-solid fa-phone"></i> 031 260 1450</span>
-      <span><i class="fa-solid fa-envelope"></i> info@rlbooks.co.za</span>
+      <span><span class="icon-mark">•</span> UKZN Howard College, Durban</span>
+      <span class="phone"><span class="icon-mark">⌕</span> 031 260 1450</span>
+      <span><span class="icon-mark">@</span> info@rlbooks.co.za</span>
     </div>
   </div>
 
@@ -429,8 +517,8 @@
         <img src="https://ik.imagekit.io/wemustcreate/rnl.png" alt="R&L Books logo"
              onerror="this.style.display='none'">
         <span>
-          <span class="brand-name">R&L BOOKS</span>
-          <span class="brand-sub">Pty Ltd · Established 2006</span>
+          <span class="brand-name">R&amp;L Books</span>
+          <span class="brand-sub">Law · Books · Legacy</span>
         </span>
       </a>
 
@@ -445,9 +533,9 @@
       </nav>
 
       <div class="nav-actions">
-        <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-file-signature"></i>Request a Quote</a>
+        <a class="btn btn-primary" href="#contact"><span class="icon-mark">→</span>Request a Quote</a>
         <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-          <i class="fa-solid fa-bars"></i>
+          <span aria-hidden="true">☰</span>
         </button>
       </div>
     </div>
@@ -467,8 +555,8 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <span class="eyebrow"><i class="fa-solid fa-scale-balanced"></i> Academic · Legal · Digital</span>
-          <h1>Advancing the Rule of Law &amp; <span>Academic Excellence</span></h1>
+          <span class="eyebrow"><span class="icon-mark">§</span> Academic · Legal · Digital</span>
+          <h1>Advancing the Rule of Law &amp; <span class="shimmer">Academic Excellence</span></h1>
           <p>
             R&L Books is a South African academic and legal information business,
             combining books, legal library services, digitisation, e-learning and
@@ -476,12 +564,12 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#legal"><i class="fa-solid fa-book-open"></i>Legal Library Services</a>
-            <a class="btn btn-outline" href="#services"><i class="fa-solid fa-layer-group"></i>Explore Services</a>
+            <a class="btn btn-outline" href="#services"><span class="icon-mark">≡</span>Explore Services</a>
           </div>
           <div class="hero-location">
             <span><i class="fa-solid fa-building-columns"></i> UKZN Howard College · Durban</span>
-            <span><i class="fa-solid fa-calendar"></i> Operating since 2006</span>
-            <span><i class="fa-solid fa-laptop-file"></i> Physical &amp; Digital Information Services</span>
+            <span><span class="icon-mark">◷</span> Operating since 2006</span>
+            <span><span class="icon-mark">▣</span> Physical &amp; Digital Information Services</span>
           </div>
         </div>
       </div>
@@ -491,8 +579,8 @@
       <div class="container about-grid">
         <div class="about-copy">
           <div class="section-head">
-            <span class="eyebrow"><i class="fa-solid fa-landmark"></i> Company Background &amp; Heritage</span>
-            <h2>Built around books. Evolving with information.</h2>
+            <span class="eyebrow"><span class="icon-mark">◆</span> Company Background &amp; Heritage</span>
+            <h2>Built around books. <span class="shimmer">Evolving with information.</span></h2>
             <p>R&L Books is a division of the R&amp;L Group, with interests spanning academic publishing, book distribution, legal library services, digitisation, online licences, computer software and related supply services.</p>
           </div>
 
@@ -521,7 +609,7 @@
           <h3>Our operating principles</h3>
 
           <div class="value">
-            <div class="value-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="value-icon"><span class="icon-mark">§</span></div>
             <div>
               <h4>Accuracy &amp; reliability</h4>
               <p>Legal and academic information must be current, organised and dependable.</p>
@@ -529,7 +617,7 @@
           </div>
 
           <div class="value">
-            <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+            <div class="value-icon"><span class="icon-mark">◇</span></div>
             <div>
               <h4>Institutional service</h4>
               <p>Services are structured around the practical requirements of libraries, faculties, firms and institutions.</p>
@@ -537,7 +625,7 @@
           </div>
 
           <div class="value">
-            <div class="value-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+            <div class="value-icon"><span class="icon-mark">↻</span></div>
             <div>
               <h4>Continuous updating</h4>
               <p>Collections and digital resources need ongoing maintenance rather than one-off delivery.</p>
@@ -545,7 +633,7 @@
           </div>
 
           <div class="value">
-            <div class="value-icon"><i class="fa-solid fa-display"></i></div>
+            <div class="value-icon"><span class="icon-mark">□</span></div>
             <div>
               <h4>Digital progression</h4>
               <p>Digitisation, e-learning and licensed digital resources extend the usefulness of traditional collections.</p>
@@ -553,19 +641,55 @@
           </div>
         </aside>
       </div>
+
+      <div class="container marquee-section" aria-label="Institutions and agencies supplied by R&amp;L Books">
+        <div class="marquee-label"><span class="shimmer" style="color:var(--maroon)">Institutions &amp; agencies supplied</span></div>
+        <div class="logo-marquee">
+          <div class="logo-track">
+            <div class="logo-item"><img src="https://iili.io/nRZcEiX.png" alt="Institution supplied by R&amp;L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcVls.png" alt="Institution supplied by R&amp;L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcWUG.png" alt="Institution supplied by R&amp;L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRQZ6U7.png" alt="Institution supplied by R&amp;L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZchJf.png" alt="Institution supplied by R&amp;L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcjR4.png" alt="Institution supplied by R&amp;L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRQZbiQ.jpg" alt="Institution supplied by R&amp;L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcwOl.png" alt="Institution supplied by R&amp;L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcNb2.png" alt="Institution supplied by R&amp;L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRQt9UP.png" alt="Institution supplied by R&amp;L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcvs9.png" alt="Institution supplied by R&amp;L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcexS.png" alt="Institution supplied by R&amp;L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcgUb.png" alt="Institution supplied by R&amp;L Books"></div>
+
+            <!-- Duplicate sequence creates a seamless continuous marquee -->
+            <div class="logo-item"><img src="https://iili.io/nRZcEiX.png" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcVls.png" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcWUG.png" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="https://iili.io/nRQZ6U7.png" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZchJf.png" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcjR4.png" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="https://iili.io/nRQZbiQ.jpg" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcwOl.png" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcNb2.png" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="https://iili.io/nRQt9UP.png" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcvs9.png" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcexS.png" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcgUb.png" alt="" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section dark-section" id="services">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-compass"></i> What R&amp;L Books Does</span>
+          <span class="eyebrow"><span class="icon-mark">◈</span> What R&amp;L Books Does</span>
           <h2>Information services across the physical and digital spectrum.</h2>
           <p>The service model connects academic supply, legal library maintenance and the digital infrastructure institutions increasingly need.</p>
         </div>
 
         <div class="service-grid">
           <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-book"></i></div>
+            <div class="service-icon"><span class="icon-mark">▤</span></div>
             <h3>Academic Books &amp; Publishing Supply</h3>
             <p>Academic textbooks and learning materials for students, faculties and educational institutions.</p>
             <ul>
@@ -577,7 +701,7 @@
           </article>
 
           <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="service-icon"><span class="icon-mark">§</span></div>
             <h3>Legal Library Services</h3>
             <p>Practical maintenance of physical legal collections where current, orderly reference material remains essential.</p>
             <ul>
@@ -589,7 +713,7 @@
           </article>
 
           <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-laptop"></i></div>
+            <div class="service-icon"><span class="icon-mark">▣</span></div>
             <h3>Digitisation, E-Learning &amp; Digital Supply</h3>
             <p>Future-facing services that move information into usable digital environments without abandoning institutional reference needs.</p>
             <ul>
@@ -606,7 +730,7 @@
     <section class="section" id="legal">
       <div class="container">
         <div class="section-head center">
-          <span class="eyebrow"><i class="fa-solid fa-file-circle-check"></i> Legal Library Updating</span>
+          <span class="eyebrow"><span class="icon-mark">✓</span> Legal Library Updating</span>
           <h2>Keeping legal collections current, organised and usable.</h2>
           <p>Legal reference collections do not end with delivery. Updating, filing, indexing and maintenance keep the collection useful over time.</p>
         </div>
@@ -619,12 +743,12 @@
               reference collections, including new library setup and the clearing of accumulated filing backlogs.
             </p>
             <ul class="check-list">
-              <li><i class="fa-solid fa-check"></i><span>Loose-leaf insertions, filing and collection checks</span></li>
-              <li><i class="fa-solid fa-check"></i><span>Annotations, corrigenda and noter-up services</span></li>
-              <li><i class="fa-solid fa-check"></i><span>New legal library setup and organisation</span></li>
-              <li><i class="fa-solid fa-check"></i><span>Backlog filing and collection recovery</span></li>
-              <li><i class="fa-solid fa-check"></i><span>Law reports, journals, statutes and government gazettes</span></li>
-              <li><i class="fa-solid fa-check"></i><span>Ongoing library updating and maintenance support</span></li>
+              <li><span class="icon-mark">✓</span><span>Loose-leaf insertions, filing and collection checks</span></li>
+              <li><span class="icon-mark">✓</span><span>Annotations, corrigenda and noter-up services</span></li>
+              <li><span class="icon-mark">✓</span><span>New legal library setup and organisation</span></li>
+              <li><span class="icon-mark">✓</span><span>Backlog filing and collection recovery</span></li>
+              <li><span class="icon-mark">✓</span><span>Law reports, journals, statutes and government gazettes</span></li>
+              <li><span class="icon-mark">✓</span><span>Ongoing library updating and maintenance support</span></li>
             </ul>
           </div>
 
@@ -662,7 +786,7 @@
       <div class="container future-grid">
         <div>
           <div class="section-head">
-            <span class="eyebrow"><i class="fa-solid fa-microchip"></i> The Next Information Layer</span>
+            <span class="eyebrow"><span class="icon-mark">⌘</span> The Next Information Layer</span>
             <h2>Digitisation and e-learning are part of the future of institutional information.</h2>
             <p>
               Physical books remain important where institutions require authoritative reference collections.
@@ -671,11 +795,11 @@
           </div>
 
           <div class="future-list ui">
-            <div><i class="fa-solid fa-check"></i><span>Digitisation of information and collections</span></div>
-            <div><i class="fa-solid fa-check"></i><span>E-learning content and platform support</span></div>
-            <div><i class="fa-solid fa-check"></i><span>Online licences and digital resource access</span></div>
-            <div><i class="fa-solid fa-check"></i><span>Software supply and licence management</span></div>
-            <div><i class="fa-solid fa-check"></i><span>Ongoing updating of physical and digital resources</span></div>
+            <div><span class="icon-mark">✓</span><span>Digitisation of information and collections</span></div>
+            <div><span class="icon-mark">✓</span><span>E-learning content and platform support</span></div>
+            <div><span class="icon-mark">✓</span><span>Online licences and digital resource access</span></div>
+            <div><span class="icon-mark">✓</span><span>Software supply and licence management</span></div>
+            <div><span class="icon-mark">✓</span><span>Ongoing updating of physical and digital resources</span></div>
           </div>
         </div>
 
@@ -693,7 +817,7 @@
     <section class="section publisher-band" id="publishers">
       <div class="container">
         <div class="section-head center">
-          <span class="eyebrow"><i class="fa-solid fa-book-bookmark"></i> Publisher Relationships</span>
+          <span class="eyebrow"><span class="icon-mark">▧</span> Publisher Relationships</span>
           <h2>Access to established legal publishing sources.</h2>
           <p>R&L Books works within a publisher and supplier ecosystem that supports legal and academic information requirements.</p>
         </div>
@@ -718,7 +842,7 @@
     <section class="section" id="governance">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-users-gear"></i> Governance &amp; Direction</span>
+          <span class="eyebrow"><span class="icon-mark">◎</span> Governance &amp; Direction</span>
           <h2>A focused business with long-term institutional relationships.</h2>
           <p>R&L Books operates as part of the wider R&amp;L Group, with direction associated with the Buntting family and a service model built around institutional information requirements.</p>
         </div>
@@ -742,7 +866,7 @@
       <div class="container contact-grid">
         <div>
           <div class="section-head">
-            <span class="eyebrow"><i class="fa-solid fa-paper-plane"></i> Start a Conversation</span>
+            <span class="eyebrow"><span class="icon-mark">→</span> Start a Conversation</span>
             <h2>Tell us what your institution needs.</h2>
             <p>
               Request information about legal library updating, academic books, digitisation,
@@ -752,15 +876,15 @@
 
           <div class="contact-details ui">
             <div class="contact-detail">
-              <i class="fa-solid fa-location-dot"></i>
+              <span class="icon-mark">•</span>
               <div><strong>Operational location</strong><span>UKZN Howard College, Durban</span></div>
             </div>
             <div class="contact-detail">
-              <i class="fa-solid fa-phone"></i>
+              <span class="icon-mark">⌕</span>
               <div><strong>Telephone</strong><a href="tel:+27312601450">031 260 1450</a></div>
             </div>
             <div class="contact-detail">
-              <i class="fa-solid fa-envelope"></i>
+              <span class="icon-mark">@</span>
               <div><strong>Email</strong><a href="mailto:info@rlbooks.co.za">info@rlbooks.co.za</a></div>
             </div>
           </div>
@@ -798,7 +922,7 @@
             <textarea id="message" name="message" placeholder="Briefly describe what you need."></textarea>
           </div>
 
-          <button class="btn btn-dark" type="submit"><i class="fa-solid fa-paper-plane"></i>Submit Enquiry</button>
+          <button class="btn btn-dark" type="submit"><span class="icon-mark">→</span>Submit Enquiry</button>
           <p class="notice">This form prepares an enquiry on this page. Connect it to the client's preferred email/form endpoint before production deployment.</p>
         </form>
       </div>
@@ -815,6 +939,11 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
+    const siteHeader = document.querySelector(".site-header");
+    const setHeaderState = () => siteHeader.classList.toggle("scrolled", window.scrollY > 30);
+    setHeaderState();
+    window.addEventListener("scroll", setHeaderState, {passive:true});
+
     const menuBtn = document.getElementById("menuBtn");
     const mobilePanel = document.getElementById("mobilePanel");
     const toast = document.getElementById("toast");
@@ -823,15 +952,15 @@
       const open = mobilePanel.classList.toggle("open");
       menuBtn.setAttribute("aria-expanded", String(open));
       menuBtn.innerHTML = open
-        ? '<i class="fa-solid fa-xmark"></i>'
-        : '<i class="fa-solid fa-bars"></i>';
+        ? '<span aria-hidden="true">×</span>'
+        : '<span aria-hidden="true">☰</span>';
     });
 
     document.querySelectorAll(".mobile-panel a").forEach(link => {
       link.addEventListener("click", () => {
         mobilePanel.classList.remove("open");
         menuBtn.setAttribute("aria-expanded","false");
-        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        menuBtn.innerHTML = '<span aria-hidden="true">☰</span>';
       });
     });
 
