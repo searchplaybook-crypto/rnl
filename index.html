@@ -473,237 +473,6 @@
       </nav>
 
       <div class="nav-actions">
-        <a clasal-services{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
-    .mini-card{
-      padding:21px;background:var(--soft);border:1px solid var(--line);border-radius:16px;
-    }
-    .mini-card h4{margin:0 0 6px;font:800 13px "Inter",sans-serif;color:var(--maroon)}
-    .mini-card p{margin:0;font-size:15px;color:#60656b;line-height:1.45}
-
-    /* Future */
-    .future{
-      background:linear-gradient(135deg,#f1e6d0,#fbfaf8 48%,#eee9e4);
-    }
-    .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-    .future-box{
-      background:var(--maroon);color:#fff;border-radius:28px;padding:38px;
-      position:relative;overflow:hidden;
-    }
-    .future-box:before{
-      content:"";position:absolute;width:230px;height:230px;border:1px solid rgba(216,154,33,.3);
-      border-radius:50%;right:-90px;top:-90px;
-    }
-    .future-box h3{margin:0 0 13px;font:800 29px/1.15 "Switzer",Arial,sans-serif}
-    .future-box p{margin:0;color:#ded2d3}
-    .future-list{display:grid;gap:12px;margin-top:24px}
-    .future-list div{display:flex;gap:12px;align-items:flex-start}
-    .future-list i{color:var(--gold);margin-top:5px}
-
-    /* Publishers */
-    .publisher-band{background:#fff;border-block:1px solid var(--line)}
-    .publisher-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .publisher{
-      min-height:145px;padding:24px;border:1px solid var(--line);border-radius:18px;
-      display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-      background:#fff;
-    }
-    .publisher strong{font:800 20px "Switzer",Arial,sans-serif;color:var(--maroon)}
-    .publisher span{margin-top:7px;color:#6a6f75;font:600 11px "Inter",sans-serif;text-transform:uppercase;letter-spacing:.08em}
-
-    /* Governance */
-    .governance-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .person{
-      padding:28px;border:1px solid var(--line);border-radius:20px;background:#fff;
-      box-shadow:0 10px 30px rgba(25,10,12,.05);
-    }
-    .person .role{font:800 10px "Inter",sans-serif;text-transform:uppercase;letter-spacing:.13em;color:var(--gold)}
-    .person h3{margin:8px 0 8px;font:800 24px "Switzer",Arial,sans-serif;color:var(--maroon)}
-    .person p{margin:0;color:#666;font-size:16px}
-
-    /* Contact */
-    .contact{
-      background:var(--maroon);color:#fff;
-    }
-    .contact-grid{display:grid;grid-template-columns:1fr .85fr;gap:50px;align-items:start}
-    .contact h2{color:#fff}
-    .contact .section-head p{color:#ddd0d1}
-    .contact-details{display:grid;gap:12px;margin-top:28px}
-    .contact-detail{
-      display:flex;gap:14px;align-items:flex-start;
-      padding:15px 0;border-bottom:1px solid rgba(255,255,255,.1);
-    }
-    .contact-detail i{width:20px;color:var(--gold);margin-top:5px}
-    .contact-detail strong{display:block;font:800 11px "Inter",sans-serif;text-transform:uppercase;letter-spacing:.1em;color:#d8a94b}
-    .contact-detail span,.contact-detail a{display:block;color:#fff;text-decoration:none}
-    .contact-form{
-      background:#fff;color:var(--ink);border-radius:24px;padding:30px;
-      box-shadow:0 25px 60px rgba(0,0,0,.22);
-    }
-    .contact-form h3{margin:0 0 18px;font:800 22px "Switzer",Arial,sans-serif;color:var(--maroon)}
-    .field{margin-bottom:14px}
-    .field label{display:block;margin-bottom:6px;font:800 10px "Inter",sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#5c6268}
-    .field input,.field textarea,.field select{
-      width:100%;border:1px solid #ddd6cf;border-radius:11px;padding:12px 13px;
-      background:#faf9f7;color:#202020;outline:0;
-    }
-    .field textarea{min-height:110px;resize:vertical}
-    .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--crimson);box-shadow:0 0 0 3px rgba(125,31,45,.1)}
-
-    footer{
-      background:#100708;color:#bdb3b4;padding:24px 0;
-      font:600 11px "Inter",sans-serif;
-    }
-    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    .footer-inner strong{color:#fff}
-    .notice{font-size:12px;color:#777;margin-top:12px}
-
-    /* Toast */
-    .toast{
-      position:fixed;right:18px;bottom:18px;z-index:200;
-      background:#151515;color:#fff;padding:15px 18px;border-radius:12px;
-      box-shadow:0 20px 50px rgba(0,0,0,.25);
-      font:700 12px "Inter",sans-serif;
-      transform:translateY(30px);opacity:0;pointer-events:none;transition:.25s ease;
-    }
-    .toast.show{transform:translateY(0);opacity:1}
-
-
-    /* Colorion-inspired pure-CSS text motion: shimmer / shine, with reduced-motion support */
-    .shimmer{
-      background:linear-gradient(
-        110deg,
-        currentColor 0%,
-        currentColor 36%,
-        #fff4c8 47%,
-        #ffffff 50%,
-        #fff4c8 53%,
-        currentColor 64%,
-        currentColor 100%
-      );
-      background-size:220% 100%;
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-      animation:textShimmer 4.8s linear infinite;
-    }
-    @keyframes textShimmer{
-      from{background-position:220% 0}
-      to{background-position:-220% 0}
-    }
-    .hero h1 .shimmer{color:var(--gold)}
-    .section-head h2 .shimmer{color:var(--maroon)}
-    .marquee-section{
-      margin:52px 0 0;
-      padding:30px 0 6px;
-      border-top:1px solid var(--line);
-      overflow:hidden;
-    }
-    .marquee-label{
-      text-align:center;
-      margin-bottom:22px;
-      font:800 10px "Switzer",sans-serif;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:#777;
-    }
-    .logo-marquee{
-      position:relative;
-      width:100%;
-      overflow:hidden;
-      mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-      -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-    }
-    .logo-track{
-      display:flex;
-      align-items:center;
-      gap:26px;
-      width:max-content;
-      animation:logoScroll 42s linear infinite;
-    }
-    .logo-track:hover{animation-play-state:paused}
-    .logo-item{
-      width:180px;height:92px;
-      flex:0 0 180px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:13px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      box-shadow:0 8px 24px rgba(25,10,12,.05);
-    }
-    .logo-item img{
-      width:100%;height:100%;object-fit:contain;
-    }
-    @keyframes logoScroll{
-      from{transform:translateX(0)}
-      to{transform:translateX(-50%)}
-    }
-    @media (prefers-reduced-motion:reduce){
-      .shimmer,.logo-track{animation:none}
-      html{scroll-behavior:auto}
-    }
-
-    @media (max-width: 980px){
-      .desktop-nav,.nav-actions .btn{display:none}
-      .menu-btn{display:grid;place-items:center}
-      .about-grid,.legal-layout,.future-grid,.contact-grid{grid-template-columns:1fr}
-      .service-grid{grid-template-columns:1fr}
-      .publisher-grid{grid-template-columns:1fr}
-      .governance-grid{grid-template-columns:1fr}
-      .hero-inner{min-height:590px}
-    }
-    @media (max-width: 680px){
-      .container{width:min(var(--max),calc(100% - 26px))}
-      .section{padding:68px 0}
-      .utility-inner{justify-content:center;text-align:center;min-height:34px}
-      .utility .phone{display:none}
-      .brand img{width:62px}
-      .brand-name{font-size:16px}
-      .brand-sub{font-size:8px}
-      .hero{background-position:60% center}
-      .hero h1{font-size:43px}
-      .hero p{font-size:19px}
-      .hero-actions .btn{width:100%}
-      .hero-location{display:grid;grid-template-columns:1fr}
-      .legal-services{grid-template-columns:1fr}
-      .contact-form{padding:22px}
-    }
-  </style>
-</head>
-
-<body>
-  <div class="utility">
-    <div class="container utility-inner">
-      <span><span class="icon-mark">•</span> UKZN Howard College, Durban</span>
-      <span class="phone"><span class="icon-mark">⌕</span> 031 260 1450</span>
-      <span><span class="icon-mark">@</span> info@rlbooks.co.za</span>
-    </div>
-  </div>
-
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="R&L Books home">
-        <img src="https://ik.imagekit.io/wemustcreate/rnl.png" alt="R&L Books logo"
-             onerror="this.style.display='none'">
-        <span>
-          <span class="brand-name">R&amp;L Books</span>
-          <span class="brand-sub">Law · Books · Legacy</span>
-        </span>
-      </a>
-
-      <nav class="desktop-nav">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#legal">Legal Libraries</a>
-        <a href="#digital">Digital</a>
-        <a href="#publishers">Publishers</a>
-        <a href="#governance">Governance</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="nav-actions">
         <a class="btn btn-primary" href="#contact"><span class="icon-mark">→</span>Request a Quote</a>
         <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
           <span aria-hidden="true">☰</span>
@@ -712,12 +481,12 @@
     </div>
 
     <div class="mobile-panel" id="mobilePanel">
-      <a href="#about">About & Heritage</a>
+      <a href="#about">About &amp; Heritage</a>
       <a href="#services">Services</a>
       <a href="#legal">Legal Library Services</a>
-      <a href="#digital">Digitisation & E-Learning</a>
-      <a href="#publishers">Publisher Relationships</a>
-      <a href="#governance">Governance & Direction</a>
+      <a href="#digital">Digitisation &amp; E-Learning</a>
+      <a href="catalog.html">Product Catalog</a>
+      <a href="#governance">Governance &amp; Direction</a>
       <a href="#contact">Contact / Request a Quote</a>
     </div>
   </header>
@@ -729,18 +498,18 @@
           <span class="eyebrow"><span class="icon-mark">§</span> Academic · Legal · Digital</span>
           <h1>Advancing the Rule of Law &amp; <span class="shimmer">Academic Excellence</span></h1>
           <p>
-            R&L Books is a South African academic and legal information business,
+            R&amp;L Books is a South African academic and legal information business,
             combining books, legal library services, digitisation, e-learning and
             digital supply for institutions, professionals and learners.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#legal"><i class="fa-solid fa-book-open"></i>Legal Library Services</a>
+            <a class="btn btn-primary" href="#legal"><span class="icon-mark">▤</span>Legal Library Services</a>
             <a class="btn btn-outline" href="#services"><span class="icon-mark">≡</span>Explore Services</a>
           </div>
           <div class="hero-location">
-            <span><i class="fa-solid fa-building-columns"></i> UKZN Howard College · Durban</span>
+            <span><span class="icon-mark">▣</span> UKZN Howard College · Durban</span>
             <span><span class="icon-mark">◷</span> Operating since 2006</span>
-            <span><span class="icon-mark">▣</span> Physical &amp; Digital Information Services</span>
+            <span><span class="icon-mark">▥</span> Physical &amp; Digital Information Services</span>
           </div>
         </div>
       </div>
@@ -752,13 +521,13 @@
           <div class="section-head">
             <span class="eyebrow"><span class="icon-mark">◆</span> Company Background &amp; Heritage</span>
             <h2>Built around books. <span class="shimmer">Evolving with information.</span></h2>
-            <p>R&L Books is a division of the R&amp;L Group, with interests spanning academic publishing, book distribution, legal library services, digitisation, online licences, computer software and related supply services.</p>
+            <p>R&amp;L Books is a division of the R&amp;L Group, with interests spanning academic publishing, book distribution, legal library services, digitisation, online licences, computer software and related supply services.</p>
           </div>
 
           <div class="heritage-card">
             <h3>Established in 2006</h3>
             <p style="margin:0">
-              R&L Books has operated since 2006, developing practical supply and information services for academic,
+              R&amp;L Books has operated since 2006, developing practical supply and information services for academic,
               legal, institutional and corporate environments. The current operational base is at
               <strong>UKZN Howard College in Durban</strong>.
             </p>
@@ -771,7 +540,7 @@
           </p>
 
           <p>
-            This allows R&L Books to support the information lifecycle rather than treating books, libraries and
+            This allows R&amp;L Books to support the information lifecycle rather than treating books, libraries and
             digital platforms as separate activities.
           </p>
         </div>
@@ -817,21 +586,19 @@
         <div class="marquee-label"><span class="shimmer" style="color:var(--maroon)">Institutions &amp; agencies supplied</span></div>
         <div class="logo-marquee">
           <div class="logo-track">
-            <div class="logo-item"><img src="https://iili.io/nRZcEiX.png" alt="Institution supplied by R&amp;L Books"></div>
-            <div class="logo-item"><img src="https://iili.io/nRZcVls.png" alt="Institution supplied by R&amp;L Books"></div>
-            <div class="logo-item"><img src="https://iili.io/nRZcWUG.png" alt="Institution supplied by R&amp;L Books"></div>
-            <div class="logo-item"><img src="https://iili.io/nRQZ6U7.png" alt="Institution supplied by R&amp;L Books"></div>
-            <div class="logo-item"><img src="https://iili.io/nRZchJf.png" alt="Institution supplied by R&amp;L Books"></div>
-            <div class="logo-item"><img src="https://iili.io/nRZcjR4.png" alt="Institution supplied by R&amp;L Books"></div>
-            <div class="logo-item"><img src="https://iili.io/nRQZbiQ.jpg" alt="Institution supplied by R&amp;L Books"></div>
-            <div class="logo-item"><img src="https://iili.io/nRZcwOl.png" alt="Institution supplied by R&amp;L Books"></div>
-            <div class="logo-item"><img src="https://iili.io/nRZcNb2.png" alt="Institution supplied by R&amp;L Books"></div>
-            <div class="logo-item"><img src="https://iili.io/nRQt9UP.png" alt="Institution supplied by R&amp;L Books"></div>
-            <div class="logo-item"><img src="https://iili.io/nRZcvs9.png" alt="Institution supplied by R&amp;L Books"></div>
-            <div class="logo-item"><img src="https://iili.io/nRZcexS.png" alt="Institution supplied by R&amp;L Books"></div>
-            <div class="logo-item"><img src="https://iili.io/nRZcgUb.png" alt="Institution supplied by R&amp;L Books"></div>
-
-            <!-- Duplicate sequence creates a seamless continuous marquee -->
+            <div class="logo-item"><img src="https://iili.io/nRZcEiX.png" alt="Institution supplied by R&L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcVls.png" alt="Institution supplied by R&L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcWUG.png" alt="Institution supplied by R&L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRQZ6U7.png" alt="Institution supplied by R&L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZchJf.png" alt="Institution supplied by R&L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcjR4.png" alt="Institution supplied by R&L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRQZbiQ.jpg" alt="Institution supplied by R&L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcwOl.png" alt="Institution supplied by R&L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcNb2.png" alt="Institution supplied by R&L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRQt9UP.png" alt="Institution supplied by R&L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcvs9.png" alt="Institution supplied by R&L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcexS.png" alt="Institution supplied by R&L Books"></div>
+            <div class="logo-item"><img src="https://iili.io/nRZcgUb.png" alt="Institution supplied by R&L Books"></div>
             <div class="logo-item"><img src="https://iili.io/nRZcEiX.png" alt="" aria-hidden="true"></div>
             <div class="logo-item"><img src="https://iili.io/nRZcVls.png" alt="" aria-hidden="true"></div>
             <div class="logo-item"><img src="https://iili.io/nRZcWUG.png" alt="" aria-hidden="true"></div>
@@ -869,6 +636,9 @@
               <li>Institutional book supply</li>
               <li>Import and sourcing support</li>
             </ul>
+            <a class="btn-enquire" href="#contact" onclick="presetService('Academic books & publishing supply')">
+              Enquire about this service <span class="icon-mark">→</span>
+            </a>
           </article>
 
           <article class="service-card">
@@ -881,10 +651,13 @@
               <li>Backlog filing and library setup</li>
               <li>Law reports, journals and gazettes</li>
             </ul>
+            <a class="btn-enquire" href="#contact" onclick="presetService('Legal library updating')">
+              Enquire about this service <span class="icon-mark">→</span>
+            </a>
           </article>
 
           <article class="service-card">
-            <div class="service-icon"><span class="icon-mark">▣</span></div>
+            <div class="service-icon"><span class="icon-mark">▥</span></div>
             <h3>Digitisation, E-Learning &amp; Digital Supply</h3>
             <p>Future-facing services that move information into usable digital environments without abandoning institutional reference needs.</p>
             <ul>
@@ -893,7 +666,108 @@
               <li>Software and licence supply</li>
               <li>Digital resource management</li>
             </ul>
+            <a class="btn-enquire" href="#contact" onclick="presetService('Digitisation')">
+              Enquire about this service <span class="icon-mark">→</span>
+            </a>
           </article>
+        </div>
+
+        <!-- Detailed service breakdown -->
+        <div style="margin-top:56px">
+
+          <div class="service-detail">
+            <div>
+              <h3>Academic Books &amp; Publishing Supply</h3>
+              <p class="detail-lead">
+                R&amp;L Books supplies academic textbooks and learning materials across the full education pipeline —
+                from university faculties and libraries to nursing colleges, schools, government institutions
+                and corporate training environments.
+              </p>
+              <ul class="detail-points">
+                <li><i>✓</i><span>Prescribed and recommended textbooks for university modules</span></li>
+                <li><i>✓</i><span>Reference and specialist titles for libraries and research collections</span></li>
+                <li><i>✓</i><span>Institutional book supply for faculties, libraries and departments</span></li>
+                <li><i>✓</i><span>Publishing and distribution relationships with local and international publishers</span></li>
+                <li><i>✓</i><span>Sourcing and import support for difficult-to-find titles</span></li>
+                <li><i>✓</i><span>Supply to nursing colleges, schools, government and corporate institutions</span></li>
+              </ul>
+            </div>
+            <div class="detail-side">
+              <h4>Where this fits</h4>
+              <p>
+                Academic supply is more than filling an order. Institutions need reliable sourcing, accurate
+                edition matching, and a supplier that understands the difference between a prescribed textbook
+                and a general trade book. R&amp;L Books operates at that intersection — connecting publishers,
+                libraries and learners with the right information at the right time.
+              </p>
+              <a class="btn-enquire" href="#contact" onclick="presetService('Academic books & publishing supply')" style="margin-top:18px">
+                Enquire about academic supply <span class="icon-mark">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="service-detail">
+            <div>
+              <h3>Legal Library Services</h3>
+              <p class="detail-lead">
+                Legal reference collections require ongoing maintenance. R&amp;L Books provides the operational
+                services that keep loose-leaf sets, law reports, journals, statutes and gazettes current,
+                filed and usable.
+              </p>
+              <ul class="detail-points">
+                <li><i>✓</i><span>Loose-leaf updating — insertion and filing of amendments and new material</span></li>
+                <li><i>✓</i><span>Annotations and noter-up work on reported cases and reference sources</span></li>
+                <li><i>✓</i><span>Legal library setup — organising and preparing new collections for institutional use</span></li>
+                <li><i>✓</i><span>Backlog filing — systematic recovery of accumulated inserts and outstanding updates</span></li>
+                <li><i>✓</i><span>Law reports, legal journals and government gazettes</span></li>
+                <li><i>✓</i><span>Ongoing updating and maintenance support, including daily updating where required</span></li>
+              </ul>
+            </div>
+            <div class="detail-side">
+              <h4>Why it matters</h4>
+              <p>
+                A legal library that is not updated is a liability, not an asset. Every day that inserts sit unfiled
+                is a day the collection cannot be relied on. R&amp;L Books treats legal library maintenance as a
+                continuous discipline, not a one-off delivery. That is what makes a collection usable by
+                practitioners, faculties and researchers.
+              </p>
+              <a class="btn-enquire" href="#contact" onclick="presetService('Legal library updating')" style="margin-top:18px">
+                Enquire about legal library services <span class="icon-mark">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="service-detail">
+            <div>
+              <h3>Digitisation, E-Learning &amp; Digital Supply</h3>
+              <p class="detail-lead">
+                Institutional information is moving into digital environments. R&amp;L Books supports that transition
+                with digitisation, e-learning content, online licences, software supply and digital resource
+                management — as an evolution of the physical collection, not a replacement for it.
+              </p>
+              <ul class="detail-points">
+                <li><i>✓</i><span>Digitisation of physical collections, documents and reference material</span></li>
+                <li><i>✓</i><span>E-learning content and platform support for academic and training environments</span></li>
+                <li><i>✓</i><span>Online licences and digital resource access for libraries and institutions</span></li>
+                <li><i>✓</i><span>Software supply and licence management for academic and professional use</span></li>
+                <li><i>✓</i><span>Digital supply of course materials, reference content and subscription resources</span></li>
+                <li><i>✓</i><span>Ongoing maintenance of both physical and digital reference environments</span></li>
+              </ul>
+            </div>
+            <div class="detail-side">
+              <h4>The direction</h4>
+              <p>
+                Physical books remain essential where institutions require authoritative, archived and
+                authenticated reference collections. At the same time, learning, research and legal
+                practice increasingly depend on digital access. R&amp;L Books positions itself to support both —
+                so that institutions do not have to choose between heritage and modernisation.
+              </p>
+              <a class="btn-enquire" href="#contact" onclick="presetService('Digitisation')" style="margin-top:18px">
+                Enquire about digital supply <span class="icon-mark">→</span>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -910,7 +784,7 @@
           <div class="legal-intro">
             <h3>Physical library maintenance</h3>
             <p>
-              R&L Books supports legal libraries with the operational work required to maintain loose-leaf and
+              R&amp;L Books supports legal libraries with the operational work required to maintain loose-leaf and
               reference collections, including new library setup and the clearing of accumulated filing backlogs.
             </p>
             <ul class="check-list">
@@ -921,6 +795,9 @@
               <li><span class="icon-mark">✓</span><span>Law reports, journals, statutes and government gazettes</span></li>
               <li><span class="icon-mark">✓</span><span>Ongoing library updating and maintenance support</span></li>
             </ul>
+            <a class="btn-enquire on-light" href="#contact" onclick="presetService('Legal library setup / backlog filing')" style="margin-top:22px">
+              Enquire about legal library updating <span class="icon-mark">→</span>
+            </a>
           </div>
 
           <div class="legal-services">
@@ -972,6 +849,10 @@
             <div><span class="icon-mark">✓</span><span>Software supply and licence management</span></div>
             <div><span class="icon-mark">✓</span><span>Ongoing updating of physical and digital resources</span></div>
           </div>
+
+          <a class="btn-enquire on-light" href="#contact" onclick="presetService('E-learning')" style="margin-top:24px">
+            Enquire about digital &amp; e-learning <span class="icon-mark">→</span>
+          </a>
         </div>
 
         <div class="future-box">
@@ -988,9 +869,9 @@
     <section class="section publisher-band" id="publishers">
       <div class="container">
         <div class="section-head center">
-          <span class="eyebrow"><span class="icon-mark">▧</span> Publisher Relationships</span>
+          <span class="eyebrow"><span class="icon-mark">▧</span> Legal Information Ecosystem</span>
           <h2>Access to established legal publishing sources.</h2>
-          <p>R&L Books works within a publisher and supplier ecosystem that supports legal and academic information requirements.</p>
+          <p>R&amp;L Books works within a publisher and supplier ecosystem that supports legal and academic information requirements. Appearance does not imply commercial partnership or endorsement.</p>
         </div>
 
         <div class="publisher-grid ui">
@@ -1015,7 +896,7 @@
         <div class="section-head">
           <span class="eyebrow"><span class="icon-mark">◎</span> Governance &amp; Direction</span>
           <h2>A focused business with long-term institutional relationships.</h2>
-          <p>R&L Books operates as part of the wider R&amp;L Group, with direction associated with the Buntting family and a service model built around institutional information requirements.</p>
+          <p>R&amp;L Books operates as part of the wider R&amp;L Group, with direction associated with the Buntting family and a service model built around institutional information requirements.</p>
         </div>
 
         <div class="governance-grid">
@@ -1104,6 +985,7 @@
     <div class="container footer-inner">
       <div><strong>R&amp;L Books (Pty) Ltd</strong> · A division of the R&amp;L Group</div>
       <div>Academic · Legal · Digital · Established 2006</div>
+      <div><a href="catalog.html">Product Catalog</a> · <a href="https://wemustcreate.co.za" rel="noopener">Digital infrastructure by WeMustCreate</a></div>
     </div>
   </footer>
 
@@ -1122,9 +1004,7 @@
     menuBtn.addEventListener("click", () => {
       const open = mobilePanel.classList.toggle("open");
       menuBtn.setAttribute("aria-expanded", String(open));
-      menuBtn.innerHTML = open
-        ? '<span aria-hidden="true">×</span>'
-        : '<span aria-hidden="true">☰</span>';
+      menuBtn.innerHTML = open ? '<span aria-hidden="true">×</span>' : '<span aria-hidden="true">☰</span>';
     });
 
     document.querySelectorAll(".mobile-panel a").forEach(link => {
@@ -1142,9 +1022,20 @@
       window.__toastTimer = window.setTimeout(() => toast.classList.remove("show"), 4200);
     }
 
+    function presetService(name){
+      const select = document.getElementById("service");
+      if(!select) return;
+      for (let i = 0; i < select.options.length; i++){
+        const opt = select.options[i];
+        if (opt.text === name || opt.textContent === name || opt.value === name){
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
     document.getElementById("quoteForm").addEventListener("submit", function(e){
       e.preventDefault();
-
       const data = new FormData(this);
       const subject = encodeURIComponent("R&L Books enquiry — " + data.get("service"));
       const body = encodeURIComponent(
@@ -1153,7 +1044,6 @@
         "Service: " + data.get("service") + "\n\n" +
         "Requirement:\n" + data.get("message")
       );
-
       window.location.href = "mailto:info@rlbooks.co.za?subject=" + subject + "&body=" + body;
       showToast("Opening your email client with the enquiry details.");
     });
