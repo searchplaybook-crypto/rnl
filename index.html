@@ -6,7 +6,7 @@
   <meta name="description" content="R&L Books (Pty) Ltd — academic books, legal library services, digitisation, e-learning and digital supply. Established in 2006 and based at UKZN Howard College, Durban.">
   <meta name="author" content="R&L Books (Pty) Ltd">
   <meta name="theme-color" content="#22080b">
-  <title>R&L Books | Rule of Law & Academic Excellence</title>
+  <title>R&L Books | Law · Books · Legacy</title>
 
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,600,700&f[]=switzer@400,500,600,700,800&display=swap">
 
@@ -38,17 +38,17 @@
       font-family:"Zodiak",Georgia,serif;
       font-size:18px;
       line-height:1.65;
+      overflow-x:hidden;
     }
     img{max-width:100%;display:block}
     a{color:inherit}
-    button,input,textarea,select{font:inherit}
+    button,input,textarea,select{font:inherit;font-family:inherit}
     .container{width:min(var(--max),calc(100% - 36px));margin-inline:auto}
     .ui{font-family:"Switzer",Arial,sans-serif}
-    .title{font-family:"Switzer",Arial,sans-serif}
     .eyebrow{
       display:inline-flex;align-items:center;gap:8px;
       color:var(--gold);
-      font:800 11px/1 "Switzer",sans-serif;
+      font:800 11px/1 "Switzer",Arial,sans-serif;
       letter-spacing:.16em;text-transform:uppercase;
     }
     .section{padding:92px 0}
@@ -64,7 +64,7 @@
     .btn{
       border:0;border-radius:12px;padding:14px 20px;
       display:inline-flex;justify-content:center;align-items:center;gap:10px;
-      font:800 12px/1 "Switzer",sans-serif;
+      font:800 12px/1 "Switzer",Arial,sans-serif;
       letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
       cursor:pointer;transition:.2s ease;
     }
@@ -77,7 +77,7 @@
     .btn-whatsapp:hover{background:#187038}
     .btn-enquire{
       display:inline-flex;align-items:center;gap:8px;
-      font:800 11px/1 "Switzer",sans-serif;
+      font:800 11px/1 "Switzer",Arial,sans-serif;
       letter-spacing:.1em;text-transform:uppercase;
       color:var(--crimson);text-decoration:none;
       border-bottom:1px solid rgba(125,31,45,.3);
@@ -85,8 +85,6 @@
       background:transparent;cursor:pointer;
     }
     .btn-enquire:hover{color:var(--maroon);border-bottom-color:var(--maroon)}
-    .btn-enquire.on-light{color:var(--crimson);border-bottom-color:rgba(125,31,45,.3)}
-    .btn-enquire.on-light:hover{color:var(--maroon);border-bottom-color:var(--maroon)}
 
     /* Header */
     .site-header{
@@ -99,7 +97,7 @@
     }
     .site-header.scrolled{
       position:fixed;
-      background:rgba(18,7,9,.68);
+      background:rgba(18,7,9,.72);
       border-bottom-color:rgba(216,154,33,.22);
       box-shadow:0 12px 40px rgba(0,0,0,.18);
     }
@@ -109,7 +107,7 @@
     }
     .utility-inner{
       min-height:34px;display:flex;align-items:center;justify-content:flex-end;gap:18px;
-      font:600 10px "Switzer",sans-serif;
+      font:600 10px "Switzer",Arial,sans-serif;flex-wrap:wrap;
     }
     .utility span{display:inline-flex;align-items:center;gap:7px}
     .utility a{color:inherit;text-decoration:none}
@@ -118,14 +116,14 @@
     .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
     .brand img{width:72px;height:48px;object-fit:contain}
-    .brand-name{font:800 20px/1 "Switzer",sans-serif;color:#fff;letter-spacing:-.025em}
+    .brand-name{font:800 20px/1 "Switzer",Arial,sans-serif;color:#fff;letter-spacing:-.025em}
     .brand-sub{
       display:block;margin-top:5px;color:#e4c77d;
-      font:700 9px/1 "Switzer",sans-serif;letter-spacing:.13em;text-transform:uppercase;
+      font:700 9px/1 "Switzer",Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;
     }
     .desktop-nav{
       display:flex;align-items:center;gap:22px;
-      font:700 10px "Switzer",sans-serif;
+      font:700 10px "Switzer",Arial,sans-serif;
       text-transform:uppercase;letter-spacing:.07em;
     }
     .desktop-nav a{text-decoration:none;color:#fff}
@@ -146,15 +144,15 @@
     .mobile-panel a{
       display:block;padding:13px 0;
       border-bottom:1px solid rgba(255,255,255,.1);
-      font:700 12px "Switzer",sans-serif;
+      font:700 12px "Switzer",Arial,sans-serif;
       text-decoration:none;text-transform:uppercase;letter-spacing:.05em;color:#fff;
     }
 
-    /* Hero */
+    /* Hero — MORE TRANSPARENT overlay */
     .hero{
       position:relative;overflow:hidden;color:#fff;
       background:
-        linear-gradient(120deg,rgba(22,5,8,.97),rgba(80,15,25,.92) 52%,rgba(21,21,21,.97)),
+        linear-gradient(120deg,rgba(22,5,8,.68),rgba(80,15,25,.55) 52%,rgba(21,21,21,.68)),
         url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=85") center/cover;
     }
     .hero:after{
@@ -162,6 +160,7 @@
       width:600px;height:600px;
       border:1px solid rgba(216,154,33,.18);border-radius:50%;
       box-shadow:0 0 0 70px rgba(216,154,33,.035),0 0 0 140px rgba(216,154,33,.025);
+      pointer-events:none;
     }
     .hero-inner{
       min-height:650px;display:flex;align-items:center;justify-content:center;
@@ -172,15 +171,19 @@
       margin:20px 0;
       font:900 clamp(43px,7vw,78px)/1.02 "Switzer",Arial,sans-serif;
       letter-spacing:-.055em;
+      text-shadow:0 2px 20px rgba(0,0,0,.4);
     }
     .hero h1 span{color:var(--gold)}
-    .hero p{max-width:820px;margin:0 auto;color:#eadfe0;font-size:22px;line-height:1.5}
+    .hero p{
+      max-width:820px;margin:0 auto;color:#f0e7e8;font-size:22px;line-height:1.5;
+      text-shadow:0 1px 12px rgba(0,0,0,.4);
+    }
     .hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:34px}
     .hero-location{margin-top:46px;display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
     .hero-location span{
-      padding:9px 13px;border:1px solid rgba(255,255,255,.16);
-      border-radius:999px;background:rgba(255,255,255,.06);
-      font:600 11px "Inter",sans-serif;color:#ddd;
+      padding:9px 13px;border:1px solid rgba(255,255,255,.2);
+      border-radius:999px;background:rgba(255,255,255,.09);
+      font:600 11px "Switzer",Arial,sans-serif;color:#eee;
     }
 
     /* About */
@@ -202,7 +205,7 @@
       width:42px;height:42px;border-radius:12px;
       display:grid;place-items:center;background:rgba(216,154,33,.13);color:var(--gold);
     }
-    .value h4{margin:0;font:800 13px "Inter",sans-serif}
+    .value h4{margin:0;font:800 13px "Switzer",Arial,sans-serif}
     .value p{margin:4px 0 0;color:#d8cdce;font-size:15px;line-height:1.45}
 
     /* Service pillars */
@@ -235,6 +238,214 @@
       padding:56px 0;border-bottom:1px solid rgba(255,255,255,.08);
     }
     .service-detail:last-of-type{border-bottom:0}
+    .service-detail h3{
+      margin:0 0 14px;
+      font:800 28px/1.15 "Switzer",Arial,sans-serif;color:#fff;letter-spacing:-.02em;
+    }
+    .service-detail .detail-lead{color:#c8bdbf;font-size:18px;margin:0 0 20px}
+    .detail-points{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+    .detail-points li{display:flex;gap:12px;align-items:flex-start;color:#ded4d5;font-size:16px}
+    .detail-points i{color:var(--gold);font-style:normal;font-weight:800;margin-top:3px}
+    .detail-side{
+      padding:24px;background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.09);border-radius:18px;
+    }
+    .detail-side h4{
+      margin:0 0 10px;font:800 11px "Switzer",Arial,sans-serif;
+      letter-spacing:.13em;text-transform:uppercase;color:var(--gold);
+    }
+    .detail-side p{margin:0;color:#c8bdbf;font-size:15px;line-height:1.55}
+
+    /* Legal detail */
+    .legal-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+    .legal-intro{
+      padding:32px;background:#fff;border:1px solid var(--line);
+      border-radius:var(--radius);box-shadow:var(--shadow);
+    }
+    .legal-intro h3{margin:0 0 12px;font:800 25px "Switzer",Arial,sans-serif;color:var(--maroon)}
+    .legal-intro p{margin:0 0 18px}
+    .check-list{list-style:none;margin:0;padding:0}
+    .check-list li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #eee;font-size:17px}
+    .check-list i{color:var(--gold);margin-top:5px}
+    .legal-services{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+    .mini-card{padding:21px;background:var(--soft);border:1px solid var(--line);border-radius:16px}
+    .mini-card h4{margin:0 0 6px;font:800 13px "Switzer",Arial,sans-serif;color:var(--maroon)}
+    .mini-card p{margin:0;font-size:15px;color:#60656b;line-height:1.45}
+
+    /* Future */
+    .future{background:linear-gradient(135deg,#f1e6d0,#fbfaf8 48%,#eee9e4)}
+    .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+    .future-box{
+      background:var(--maroon);color:#fff;border-radius:28px;padding:38px;
+      position:relative;overflow:hidden;
+    }
+    .future-box:before{
+      content:"";position:absolute;width:230px;height:230px;border:1px solid rgba(216,154,33,.3);
+      border-radius:50%;right:-90px;top:-90px;
+    }
+    .future-box h3{margin:0 0 13px;font:800 29px/1.15 "Switzer",Arial,sans-serif}
+    .future-box p{margin:0;color:#ded2d3}
+    .future-list{display:grid;gap:12px;margin-top:24px}
+    .future-list div{display:flex;gap:12px;align-items:flex-start}
+    .future-list i{color:var(--gold);margin-top:5px}
+
+    /* Publishers */
+    .publisher-band{background:#fff;border-block:1px solid var(--line)}
+    .publisher-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .publisher{
+      min-height:145px;padding:24px;border:1px solid var(--line);border-radius:18px;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+      background:#fff;
+    }
+    .publisher strong{font:800 20px "Switzer",Arial,sans-serif;color:var(--maroon)}
+    .publisher span{margin-top:7px;color:#6a6f75;font:600 11px "Switzer",Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em}
+
+    /* Governance — single director */
+    .director{
+      display:grid;grid-template-columns:1fr;
+      background:#fff;border:1px solid var(--line);border-radius:24px;
+      padding:44px;box-shadow:0 18px 50px rgba(25,10,12,.06);
+      position:relative;overflow:hidden;
+    }
+    .director:before{
+      content:"";position:absolute;top:0;left:0;width:5px;height:100%;
+      background:linear-gradient(180deg,var(--gold),var(--crimson));
+    }
+    .director .role{
+      font:800 10px "Switzer",Arial,sans-serif;
+      text-transform:uppercase;letter-spacing:.16em;color:var(--gold);
+      display:inline-block;margin-bottom:10px;
+    }
+    .director h3{
+      margin:0 0 18px;
+      font:800 clamp(28px,3vw,38px)/1.15 "Switzer",Arial,sans-serif;
+      color:var(--maroon);letter-spacing:-.02em;
+    }
+    .director .lead{
+      color:#5c6167;font-size:18px;line-height:1.6;
+      margin:0 0 22px;max-width:760px;
+    }
+    .director .milestone-list{
+      list-style:none;margin:0 0 28px;padding:0;
+      display:grid;grid-template-columns:repeat(2,1fr);gap:14px 32px;max-width:760px;
+    }
+    .director .milestone-list li{
+      display:flex;gap:12px;align-items:flex-start;
+      color:#4a4f55;font-size:16px;
+      padding:12px 0;border-bottom:1px dashed #e8e2dc;
+    }
+    .director .milestone-list li:last-child{border-bottom:0}
+    .director .milestone-list strong{
+      color:var(--maroon);font:800 15px "Switzer",Arial,sans-serif;
+      min-width:62px;display:inline-block;
+    }
+    .director-cta{
+      display:flex;gap:12px;flex-wrap:wrap;align-items:center;
+    }
+    .wa-note{
+      font:600 12px "Switzer",Arial,sans-serif;color:#7a7a7a;
+      margin:0;
+    }
+
+    /* Contact */
+    .contact{background:var(--maroon);color:#fff}
+    .contact-grid{display:grid;grid-template-columns:1fr .85fr;gap:50px;align-items:start}
+    .contact h2{color:#fff}
+    .contact .section-head p{color:#ddd0d1}
+    .contact-details{display:grid;gap:12px;margin-top:28px}
+    .contact-detail{
+      display:flex;gap:14px;align-items:flex-start;
+      padding:15px 0;border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    .contact-detail i{width:20px;color:var(--gold);margin-top:5px}
+    .contact-detail strong{display:block;font:800 11px "Switzer",Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:#d8a94b}
+    .contact-detail span,.contact-detail a{display:block;color:#fff;text-decoration:none}
+    .contact-detail a:hover{color:var(--gold-soft)}
+    .contact-form{
+      background:#fff;color:var(--ink);border-radius:24px;padding:30px;
+      box-shadow:0 25px 60px rgba(0,0,0,.22);
+    }
+    .contact-form h3{margin:0 0 18px;font:800 22px "Switzer",Arial,sans-serif;color:var(--maroon)}
+    .field{margin-bottom:14px}
+    .field label{display:block;margin-bottom:6px;font:800 10px "Switzer",Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#5c6268}
+    .field input,.field textarea,.field select{
+      width:100%;border:1px solid #ddd6cf;border-radius:11px;padding:12px 13px;
+      background:#faf9f7;color:#202020;outline:0;
+    }
+    .field textarea{min-height:110px;resize:vertical}
+    .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--crimson);box-shadow:0 0 0 3px rgba(125,31,45,.1)}
+
+    footer{background:#100708;color:#bdb3b4;padding:24px 0;font:600 11px "Switzer",Arial,sans-serif}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-inner strong{color:#fff}
+    .footer-inner a{color:#d8a94b;text-decoration:none}
+    .footer-inner a:hover{text-decoration:underline}
+    .notice{font-size:12px;color:#777;margin-top:12px}
+
+    .toast{
+      position:fixed;right:18px;bottom:18px;z-index:200;
+      background:#151515;color:#fff;padding:15px 18px;border-radius:12px;
+      box-shadow:0 20px 50px rgba(0,0,0,.25);
+      font:700 12px "Switzer",Arial,sans-serif;
+      transform:translateY(30px);opacity:0;pointer-events:none;transition:.25s ease;
+      max-width:340px;
+    }
+    .toast.show{transform:translateY(0);opacity:1}
+
+    .shimmer{
+      background:linear-gradient(110deg,currentColor 0%,currentColor 36%,#fff4c8 47%,#ffffff 50%,#fff4c8 53%,currentColor 64%,currentColor 100%);
+      background-size:220% 100%;
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      animation:textShimmer 4.8s linear infinite;
+    }
+    @keyframes textShimmer{from{background-position:220% 0}to{background-position:-220% 0}}
+    .hero h1 .shimmer{color:var(--gold)}
+    .section-head h2 .shimmer{color:var(--maroon)}
+    .marquee-section{margin:52px 0 0;padding:30px 0 6px;border-top:1px solid var(--line);overflow:hidden}
+    .marquee-label{
+      text-align:center;margin-bottom:22px;
+      font:800 10px "Switzer",Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#777;
+    }
+    .logo-marquee{
+      position:relative;width:100%;overflow:hidden;
+      mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+      -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+    }
+    .logo-track{display:flex;align-items:center;gap:26px;width:max-content;animation:logoScroll 42s linear infinite}
+    .logo-track:hover{animation-play-state:paused}
+    .logo-item{
+      width:180px;height:92px;flex:0 0 180px;
+      display:flex;align-items:center;justify-content:center;padding:13px;
+      background:#fff;border:1px solid var(--line);border-radius:16px;
+      box-shadow:0 8px 24px rgba(25,10,12,.05);
+    }
+    .logo-item img{width:100%;height:100%;object-fit:contain}
+    @keyframes logoScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @media (prefers-reduced-motion:reduce){
+      .shimmer,.logo-track{animation:none}
+      html{scroll-behavior:auto}
+    }
+
+    @media (max-width: 980px){
+      .desktop-nav,.nav-actions .btn{display:none}
+      .menu-btn{display:grid;place-items:center}
+      .about-grid,.legal-layout,.future-grid,.contact-grid{grid-template-columns:1fr}
+      .service-grid{grid-template-columns:1fr}
+      .service-detail{grid-template-columns:1fr;gap:26px}
+      .publisher-grid{grid-template-columns:1fr}
+      .director{padding:32px}
+      .director .milestone-list{grid-template-columns:1fr}
+      .hero-inner{min-height:590px}
+    }
+    @media (max-width: 680px){
+      .container{width:min(var(--max),calc(100% - 26px))}
+      .section{padding:68px 0}
+      .utility-inner{justify-content:center;text-align:center;min-height:34px;flex-wrap:wrap}
+      .brand img{width:62px}
+      .brand-name{font-size:16px}
+      .brand-sub{font-size:8px}
+      .hero{background-position:60% center}
+      .hero h1{font-size:ce-detail:last-of-type{border-bottom:0}
     .service-detail h3{
       margin:0 0 14px;
       font:800 28px/1.15 "Switzer",Arial,sans-serif;color:#fff;letter-spacing:-.02em;
